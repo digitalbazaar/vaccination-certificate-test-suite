@@ -50,7 +50,7 @@ async function getCSV(path, fileName, dir) {
   const fileStream = createReadStream(_path).pipe(parser);
   fileStream.on('readable', function() {
     let record = fileStream.read();
-    while(record) {
+    while(record != null) {
       records.push(record);
       record = fileStream.read();
     }
