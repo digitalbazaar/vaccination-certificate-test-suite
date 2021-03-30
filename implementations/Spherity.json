@@ -1,0 +1,6 @@
+{
+  "name": "Spherity",
+  "implementation": "",
+  "issuer": "https://cbp-pre-prod.api.wallet.eu.spherity.io/api/v1/vc-http-api/credentials/issue",
+  "verifier": "https://cbp-pre-prod.api.wallet.eu.spherity.io/api/v1/vc-http-api/credentials/verify"
+}

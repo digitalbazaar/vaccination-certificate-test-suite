@@ -1,0 +1,6 @@
+{
+  "name": "Spruce",
+  "implementation": "Spruce",
+  "issuer": "https://demo.spruceid.com/credentials/issue",
+  "verifier": "https://demo.spruceid.com/credentials/verify"
+}

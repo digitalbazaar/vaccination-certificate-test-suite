@@ -1,0 +1,6 @@
+{
+  "name": "Mattr Labs",
+  "implementation": "Mattr",
+  "issuer": "https://platform.interop.mattrlabs.io/vc-http-api/v1/credentials",
+  "verifier": "https://platform.interop.mattrlabs.io/vc-http-api/v1/credentials/verify"
+}
