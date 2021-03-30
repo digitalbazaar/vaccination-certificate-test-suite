@@ -41,6 +41,13 @@ async function getWhoDir(path) {
   return whoDataDir;
 }
 
+function getVaccines({records, start = 1}) {
+  // the sections of the csv are separated by empty rows
+  const firstEmpty = records.findIndex(r => r.every(e => e === ''));
+  // so we return all the vaccines before the first empty row
+  return records.slice(start, firstEmpty);
+}
+
 async function getCSV(path, fileName, dir) {
   const records = [];
   if(!dir.includes(fileName)) {
@@ -69,7 +76,9 @@ async function generateCertificates() {
     // dir with the csv file of vaccinable conditions
     const path = join(process.cwd(), '.who-data', 'svc', 'input', 'data');
     const whoDataDir = await getWhoDir(path);
-    const vaccineList = await getCSV(path, conditionsList, whoDataDir);
+    const records = await getCSV(path, conditionsList, whoDataDir);
+    const vaccineList = getVaccines({records});
+console.log(vaccineList);
   } catch(e) {
     console.error(e);
   }
