@@ -4,6 +4,7 @@
 .DS_Store
 .project
 .settings
+.who-data/
 TAGS
 config.json
 node_modules/
