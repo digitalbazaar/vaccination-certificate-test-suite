@@ -1,0 +1,38 @@
+{
+  "name": "vaccination-certificate-test-suite",
+  "version": "0.0.1",
+  "description": "Demonstrates the extensibilty of VCs as immunization certificates.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha",
+    "generate-certificates": "node generate-certificates.js",
+    "report": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/digitalbazaar/vaccination-certificate-test-suite.git"
+  },
+  "keywords": [
+    "WHO",
+    "Verifiable",
+    "Credentials",
+    "Immunizations"
+  ],
+  "author": {
+    "name": "Digital Bazaar, Inc.",
+    "email": "support@digitalbazaar.com",
+    "url": "https://digitalbazaar.com/"
+  },
+  "bugs": {
+    "url": "https://github.com/digitalbazaar/vaccination-certificate-test-suite/issues"
+  },
+  "homepage": "https://github.com/digitalbazaar/vaccination-certificate-test-suite#readme",
+  "dependencies": {
+    "chai": "^4.3.4",
+    "mocha": "^8.3.2",
+    "mochawesome": "^6.2.2"
+  },
+  "engines": {
+    "node": "14.0.0"
+  }
+}
