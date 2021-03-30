@@ -4,12 +4,18 @@
 'use strict';
 
 import * as fs from 'fs/promises';
+import {createReadStream} from 'fs';
+import {finished} from 'stream/promises';
 import {join} from 'path';
+import csv from 'csv-parse';
 
+const parser = new csv.Parser();
 const contexts = [
   'https://www.w3.org/2018/credentials/v1',
   'https://w3id.org/vaccination/v1'
 ];
+
+const conditionsList = 'WHO list of vaccinable Conditions.csv';
 
 /**
  * Gets the WHO Data dir used to produce certificates.
@@ -35,6 +41,24 @@ async function getWhoDir(path) {
   return whoDataDir;
 }
 
+async function getCSV(path, fileName, dir) {
+  const records = [];
+  if(!dir.includes(fileName)) {
+    throw new Error(`dir does not contain ${fileName}`);
+  }
+  const _path = join(path, fileName);
+  const fileStream = createReadStream(_path).pipe(parser);
+  fileStream.on('readable', function() {
+    let record = fileStream.read();
+    while(record) {
+      records.push(record);
+      record = fileStream.read();
+    }
+  });
+  await finished(fileStream);
+  return records;
+}
+
 /**
  * Formats data from the WHO into test data.
  *
@@ -42,8 +66,10 @@ async function getWhoDir(path) {
 */
 async function generateCertificates() {
   try {
-    const path = join(process.cwd(), '.who-data', 'svc');
+    // dir with the csv file of vaccinable conditions
+    const path = join(process.cwd(), '.who-data', 'svc', 'input', 'data');
     const whoDataDir = await getWhoDir(path);
+    const vaccineList = await getCSV(path, conditionsList, whoDataDir);
   } catch(e) {
     console.error(e);
   }
