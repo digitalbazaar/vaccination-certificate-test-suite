@@ -6,6 +6,15 @@
 import * as fs from 'fs/promises';
 import {join} from 'path';
 
+/**
+ * Gets the WHO Data dir used to produce certificates.
+ *
+ * @param {string} path - A path to the who data dir.
+ *
+ * @throws {Error} - Throws if the dir is not found or is empty.
+ *
+ * @returns {Promise<Array<string>>} Dir and file names.
+*/
 async function getWhoDir(path) {
   let whoDataDir;
   try {
@@ -21,6 +30,11 @@ async function getWhoDir(path) {
   return whoDataDir;
 }
 
+/**
+ * Formats data from the WHO into test data.
+ *
+ * @returns {Promise} Writes data to `/certificates` and exits.
+*/
 async function generateCertificates() {
   try {
   const path = join(process.cwd(), '.who-data', 'svc2')
