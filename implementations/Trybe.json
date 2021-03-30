@@ -1,0 +1,6 @@
+{
+  "name": "Trybe",
+  "implementation": "Trybe",
+  "issuer": "https://api.dev.trybe.id/credentials/issue",
+  "verifier": "https://api.dev.trybe.id/credentials/verify"
+}

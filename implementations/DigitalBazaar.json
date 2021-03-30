@@ -1,0 +1,6 @@
+{
+  "name": "Digital Bazaar",
+  "implementation": "Demo",
+  "issuer": "https://issuer.demo.digitalbazaar.com/credentials/did%3Akey%3Az6MkmDoojMzE8aWK2a926xtVgBXY1GafcpnMSgGVaCdbAr3z/issueCredential",
+  "verifier": "https://verifier.demo.digitalbazaar.com/verifier/credentials"
+}

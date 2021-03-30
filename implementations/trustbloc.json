@@ -1,0 +1,6 @@
+{
+  "name": "Trustbloc",
+  "implementation": "SecureKey",
+  "issuer": "https://issuer.sandbox.trustbloc.dev/vc-issuer-interop/credentials/issueCredential",
+  "verifier": "https://verifier.sandbox.trustbloc.dev/verifier1/verifier/credentials"
+}

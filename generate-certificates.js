@@ -6,6 +6,11 @@
 import * as fs from 'fs/promises';
 import {join} from 'path';
 
+const contexts = [
+  'https://www.w3.org/2018/credentials/v1',
+  'https://w3id.org/vaccination/v1'
+];
+
 /**
  * Gets the WHO Data dir used to produce certificates.
  *
