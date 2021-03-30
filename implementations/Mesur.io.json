@@ -1,0 +1,6 @@
+{
+  "name": "mesur.io",
+  "implementation": "mesur",
+  "issuer": "https://vc.mesur.io/next/credentials/issue",
+  "verifier": "https://vc.mesur.io/next/credentials/verify"
+}
