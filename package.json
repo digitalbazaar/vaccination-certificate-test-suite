@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "Demonstrates the extensibilty of VCs as immunization certificates.",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "mocha",
     "generate-certificates": "node generate-certificates.js",
