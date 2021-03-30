@@ -1,0 +1,6 @@
+{
+  "name": "Factom",
+  "implementation": "Sphereon",
+  "issuer": "https://vc.api.factom.sphereon.com/services/issue/credentials",
+  "verifier": "https://vc.api.factom.sphereon.com/services/verify/credentials"
+}

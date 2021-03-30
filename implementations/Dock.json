@@ -1,0 +1,6 @@
+{
+  "name": "Dock",
+  "implementation": "Dock",
+  "issuer": "https://vcapi.dock.io/credentials/issueCredential",
+  "verifier": "https://vcapi.dock.io/verifier/credentials"
+}
