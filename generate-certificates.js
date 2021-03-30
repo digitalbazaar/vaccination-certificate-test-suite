@@ -37,7 +37,7 @@ async function getWhoDir(path) {
 */
 async function generateCertificates() {
   try {
-    const path = join(process.cwd(), '.who-data', 'svc2');
+    const path = join(process.cwd(), '.who-data', 'svc');
     const whoDataDir = await getWhoDir(path);
   } catch(e) {
     console.error(e);
