@@ -10,7 +10,6 @@ import {promisify} from 'util';
 import {join} from 'path';
 import csv from 'csv-parse';
 
-const parser = new csv.Parser();
 const contexts = [
   'https://www.w3.org/2018/credentials/v1',
   'https://w3id.org/vaccination/v1'
@@ -28,19 +27,12 @@ const conditionsList = 'WHO list of vaccinable Conditions.csv';
  *
  * @returns {Promise<Array<string>>} Dir and file names.
 */
-async function getWhoDir(path) {
-  let whoDataDir;
-  try {
-    whoDataDir = await fs.readdir(path);
-    if(whoDataDir.length <= 0) {
-      throw new Error(`Dir ${path} is empty`);
-    }
-  } catch(e) {
-    console.error(`getWhoDir failed \n` +
-      'Did you run `npm run fetch-who-int-svc`? \n');
-    throw e;
+async function getDir(path) {
+  const directory = await fs.readdir(path);
+  if(directory.length <= 0) {
+    throw new Error(`Dir ${path} is empty`);
   }
-  return whoDataDir;
+  return directory;
 }
 
 function getVaccines({records, start = 1}) {
@@ -50,13 +42,9 @@ function getVaccines({records, start = 1}) {
   return records.slice(start, firstEmpty);
 }
 
-async function getCSV(path, fileName, dir) {
+async function getCSV({path, parser = new csv.Parser()}) {
   const records = [];
-  if(!dir.includes(fileName)) {
-    throw new Error(`dir does not contain ${fileName}`);
-  }
-  const _path = join(path, fileName);
-  const fileStream = createReadStream(_path).pipe(parser);
+  const fileStream = createReadStream(path).pipe(parser);
   fileStream.on('readable', function() {
     let record = fileStream.read();
     while(record != null) {
@@ -76,9 +64,9 @@ async function getCSV(path, fileName, dir) {
 async function generateCertificates() {
   try {
     // dir with the csv file of vaccinable conditions
-    const path = join(process.cwd(), '.who-data', 'svc', 'input', 'data');
-    const whoDataDir = await getWhoDir(path);
-    const records = await getCSV(path, conditionsList, whoDataDir);
+    const path = join(
+      process.cwd(), '.who-data', 'svc', 'input', 'data', conditionsList);
+    const records = await getCSV({path});
     const vaccineList = getVaccines({records});
 console.log(vaccineList);
   } catch(e) {
