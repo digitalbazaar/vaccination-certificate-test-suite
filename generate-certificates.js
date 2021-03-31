@@ -125,9 +125,16 @@ function createVC(vaccine) {
 */
 async function generateCertificates() {
   try {
+    const whoData = join(process.cwd(), '.who-data', 'svc');
+    try {
+      await getDir(whoData);
+    } catch(e) {
+      console.error(e);
+      console.error('\n Did you run `npm run fetch-who-int-svc`?');
+      return;
+    }
     const paths = {
-      conditions: join(
-        process.cwd(), '.who-data', 'svc', 'input', 'data', conditionsList),
+      conditions: join(whoData, 'input', 'data', conditionsList),
       certificates: join(process.cwd(), 'certificates')
     };
     // dir with the csv file of vaccinable conditions
