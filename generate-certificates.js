@@ -56,6 +56,33 @@ async function getCSV({path, parser = new csv.Parser()}) {
   return records;
 }
 
+async function createVC(vaccine) {
+  // each vaccine is an array with 5 items in it.
+  /*
+  [
+    'WHO list of vaccinable conditions',
+    'ICD-11 code',
+    'ICD-11 URI',
+    'ICD-10 code ',
+    'ICD-9-CM code'
+  ]
+  */
+  const [
+    condition,
+    ICD11Code,
+    ICD11URI,
+    ICD10Code,
+    ICD9CM
+  ] = vaccine;
+  console.log({
+    condition,
+    ICD11Code,
+    ICD11URI,
+    ICD10Code,
+    ICD9CM
+  });
+}
+
 /**
  * Formats data from the WHO into test data.
  *
@@ -66,14 +93,12 @@ async function generateCertificates() {
     const paths = {
       conditions: join(
         process.cwd(), '.who-data', 'svc', 'input', 'data', conditionsList),
-      implementations: join(process.cwd(), 'implementations'),
       certificates: join(process.cwd(), 'certificates')
-    }
+    };
     // dir with the csv file of vaccinable conditions
     const records = await getCSV({path: paths.conditions});
     const vaccineList = getVaccines({records});
-    const implementations = await getDir(paths.implementations);
-console.log({vaccineList, implementations});
+    await Promise.all(vaccineList.map(createVC));
   } catch(e) {
     console.error(e);
   }
