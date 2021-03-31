@@ -5,6 +5,9 @@
 .project
 .settings
 .who-data/
+certificates/
+results/
+reports/
 TAGS
 config.json
 node_modules/
