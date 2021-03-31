@@ -63,12 +63,17 @@ async function getCSV({path, parser = new csv.Parser()}) {
 */
 async function generateCertificates() {
   try {
+    const paths = {
+      conditions: join(
+        process.cwd(), '.who-data', 'svc', 'input', 'data', conditionsList),
+      implementations: join(process.cwd(), 'implementations'),
+      certificates: join(process.cwd(), 'certificates')
+    }
     // dir with the csv file of vaccinable conditions
-    const path = join(
-      process.cwd(), '.who-data', 'svc', 'input', 'data', conditionsList);
-    const records = await getCSV({path});
+    const records = await getCSV({path: paths.conditions});
     const vaccineList = getVaccines({records});
-console.log(vaccineList);
+    const implementations = await getDir(paths.implementations);
+console.log({vaccineList, implementations});
   } catch(e) {
     console.error(e);
   }
