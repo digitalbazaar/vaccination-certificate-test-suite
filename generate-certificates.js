@@ -5,7 +5,8 @@
 
 import * as fs from 'fs/promises';
 import {createReadStream} from 'fs';
-import {finished} from 'stream/promises';
+import {finished} from 'stream';
+import {promisify} from 'util';
 import {join} from 'path';
 import csv from 'csv-parse';
 
@@ -14,6 +15,7 @@ const contexts = [
   'https://www.w3.org/2018/credentials/v1',
   'https://w3id.org/vaccination/v1'
 ];
+const asyncFinished = promisify(finished);
 
 const conditionsList = 'WHO list of vaccinable Conditions.csv';
 
@@ -62,7 +64,7 @@ async function getCSV(path, fileName, dir) {
       record = fileStream.read();
     }
   });
-  await finished(fileStream);
+  await asyncFinished(fileStream);
   return records;
 }
 
