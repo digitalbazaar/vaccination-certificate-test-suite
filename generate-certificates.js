@@ -10,10 +10,6 @@ import {promisify} from 'util';
 import {join} from 'path';
 import csv from 'csv-parse';
 
-const contexts = [
-  'https://www.w3.org/2018/credentials/v1',
-  'https://w3id.org/vaccination/v1'
-];
 const asyncFinished = promisify(finished);
 
 const conditionsList = 'WHO list of vaccinable Conditions.csv';
@@ -56,7 +52,7 @@ async function getCSV({path, parser = new csv.Parser()}) {
   return records;
 }
 
-async function createVC(vaccine) {
+function createVC(vaccine) {
   // each vaccine is an array with 5 items in it.
   /*
   [
@@ -74,6 +70,14 @@ async function createVC(vaccine) {
     ICD10Code,
     ICD9CM
   ] = vaccine;
+  const contexts = [
+    'https://www.w3.org/2018/credentials/v1',
+    'https://w3id.org/vaccination/v1'
+  ];
+  const type = [
+    'VerifiableCredential',
+    'VaccinationCertificate'
+  ];
   console.log({
     condition,
     ICD11Code,
@@ -81,6 +85,37 @@ async function createVC(vaccine) {
     ICD10Code,
     ICD9CM
   });
+  const fileName = `${ICD11Code || ICD9CM}.json`;
+  const certificate = {
+    '@context': contexts,
+    type,
+    id: 'urn:uuid:${uuid}',
+    name: condition,
+    description: condition,
+    // the test can fill this in 30 days from test time
+    expirationDate: null,
+    credentialSubject: {
+      type: 'VaccinationEvent',
+      batchNumber: String(Math.floor(Math.random() * 1000)),
+      administeringCentre: 'NiH',
+      healthProfessional: 'NiH',
+      countryOfVaccination: 'U.S.A.',
+      recipient: {
+        type: 'VaccineRecipient',
+        givenName: 'JOHN',
+        familyName: 'SMITH',
+        gender: 'Male',
+        birthDate: '1958-07-17'
+      },
+      vaccine: {
+        type: 'Vaccine',
+        disease: condition,
+        // NOTE: this needs to be updated
+        atcCode: ICD11Code
+      }
+    }
+  };
+  return {fileName, certificate};
 }
 
 /**
@@ -98,7 +133,11 @@ async function generateCertificates() {
     // dir with the csv file of vaccinable conditions
     const records = await getCSV({path: paths.conditions});
     const vaccineList = getVaccines({records});
-    await Promise.all(vaccineList.map(createVC));
+    await Promise.all(vaccineList.map(v => {
+      const {fileName, certificate} = createVC(v);
+      const filePath = join(paths.certificates, fileName);
+      return fs.writeFile(filePath, JSON.stringify(certificate, null, 2));
+    }));
   } catch(e) {
     console.error(e);
   }
