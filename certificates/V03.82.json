@@ -7,16 +7,15 @@
     "VerifiableCredential",
     "VaccinationCertificate"
   ],
-  "id": "urn:uuid:20086ce0-ee0d-4b9b-bfea-24953dd8234e",
+  "id": "urn:uvci:MDVjMmFhZDMtODM0MS00MDQ0LWEzOTYtOTFjZDQxNmMyMGVh",
   "name": "Pneumonia - Streptococcus pneumoniae [pneumococcus]",
   "description": "Pneumonia - Streptococcus pneumoniae [pneumococcus]",
-  "expirationDate": null,
   "credentialSubject": {
     "type": "VaccinationEvent",
-    "batchNumber": "316",
-    "administeringCentre": "NiH",
-    "healthProfessional": "NiH",
-    "countryOfVaccination": "U.S.A.",
+    "batchNumber": "206",
+    "administeringCentre": "U.S. Public Health Authority",
+    "healthProfessional": "U.S. Public Health Authority",
+    "countryOfVaccination": "United States of America",
     "recipient": {
       "type": "VaccineRecipient",
       "givenName": "JOHN",

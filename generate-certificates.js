@@ -9,6 +9,11 @@ import {writeJSON, getDir, getCSV} from './io.js';
 
 const conditionsList = 'WHO list of vaccinable Conditions.csv';
 
+// FIXME: this needs to generate a real uvci.
+function uvci() {
+  const input = Buffer.from(uuid());
+  return input.toString('base64');
+}
 function getVaccines({records, start = 1}) {
   // the sections of the csv are separated by empty rows
   const firstEmpty = records.findIndex(r => r.every(e => e === ''));
@@ -53,17 +58,15 @@ function createVC(vaccine) {
   const certificate = {
     '@context': contexts,
     type,
-    id: `urn:uuid:${uuid()}`,
+    id: `urn:uvci:${uvci()}`,
     name: condition,
     description: condition,
-    // the test can fill this in 30 days from test time
-    expirationDate: null,
     credentialSubject: {
       type: 'VaccinationEvent',
       batchNumber: String(Math.floor(Math.random() * 1000)),
-      administeringCentre: 'NiH',
-      healthProfessional: 'NiH',
-      countryOfVaccination: 'U.S.A.',
+      administeringCentre: 'U.S. Public Health Authority',
+      healthProfessional: 'U.S. Public Health Authority',
+      countryOfVaccination: 'United States of America',
       recipient: {
         type: 'VaccineRecipient',
         givenName: 'JOHN',

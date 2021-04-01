@@ -7,16 +7,15 @@
     "VerifiableCredential",
     "VaccinationCertificate"
   ],
-  "id": "urn:uuid:1e38ab90-5b30-4fbd-9b24-9a8af14d53b2",
+  "id": "urn:uvci:OGI2N2M5ODItNzZiYy00NmE0LWEwZTMtZGFlMzJlNzI0YWE4",
   "name": "Cervical cancer (Human papilloma virus)",
   "description": "Cervical cancer (Human papilloma virus)",
-  "expirationDate": null,
   "credentialSubject": {
     "type": "VaccinationEvent",
-    "batchNumber": "629",
-    "administeringCentre": "NiH",
-    "healthProfessional": "NiH",
-    "countryOfVaccination": "U.S.A.",
+    "batchNumber": "131",
+    "administeringCentre": "U.S. Public Health Authority",
+    "healthProfessional": "U.S. Public Health Authority",
+    "countryOfVaccination": "United States of America",
     "recipient": {
       "type": "VaccineRecipient",
       "givenName": "JOHN",

@@ -7,16 +7,15 @@
     "VerifiableCredential",
     "VaccinationCertificate"
   ],
-  "id": "urn:uuid:8a5c67ef-56ab-4490-998e-882fdee3f9b9",
+  "id": "urn:uvci:YmUyZmM0M2MtYmVjZS00ZTI1LWE5MzMtN2Q4NzZjMWVlOTIz",
   "name": "Polio  - Orimune",
   "description": "Polio  - Orimune",
-  "expirationDate": null,
   "credentialSubject": {
     "type": "VaccinationEvent",
-    "batchNumber": "227",
-    "administeringCentre": "NiH",
-    "healthProfessional": "NiH",
-    "countryOfVaccination": "U.S.A.",
+    "batchNumber": "901",
+    "administeringCentre": "U.S. Public Health Authority",
+    "healthProfessional": "U.S. Public Health Authority",
+    "countryOfVaccination": "United States of America",
     "recipient": {
       "type": "VaccineRecipient",
       "givenName": "JOHN",
