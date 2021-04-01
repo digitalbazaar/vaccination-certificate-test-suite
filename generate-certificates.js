@@ -81,6 +81,19 @@ function createVC(vaccine) {
   return {fileName, certificate};
 }
 
+// some of the vaccines are are in fact titles
+// with multiple sub-vaccines
+function conditionTitle(vaccine) {
+  // remove the title and just look at the codes.
+  const codes = vaccine.slice(1);
+  const isTitle = codes.every(c => c.trim() === '');
+  if(isTitle) {
+    // the first column will be the title
+    return vaccine[0];
+  }
+  return false;
+}
+
 /**
  * Formats data from the WHO into test data.
  *
@@ -103,8 +116,15 @@ async function generateCertificates() {
     // dir with the csv file of vaccinable conditions
     const records = await getCSV({path: paths.conditions});
     const vaccineList = getVaccines({records});
-    await Promise.all(vaccineList.map(v => {
-      const {fileName, certificate} = createVC(v);
+    let title = null;
+    await Promise.all(vaccineList.flatMap(vaccine => {
+      const isTitle = conditionTitle(vaccine);
+      if(isTitle) {
+        title = isTitle;
+        // don't include titles in the list
+        return [];
+      }
+      const {fileName, certificate} = createVC(vaccine);
       const filePath = join(paths.certificates, fileName);
       return writeJSON({path: filePath, data: certificate});
     }));
