@@ -8,12 +8,12 @@
     "VaccinationCertificate"
   ],
   "id": "urn:uuid:${uuid}",
-  "name": "  - Orimune",
-  "description": "  - Orimune",
+  "name": "Polio  - Orimune",
+  "description": "Polio  - Orimune",
   "expirationDate": null,
   "credentialSubject": {
     "type": "VaccinationEvent",
-    "batchNumber": "911",
+    "batchNumber": "180",
     "administeringCentre": "NiH",
     "healthProfessional": "NiH",
     "countryOfVaccination": "U.S.A.",
@@ -26,7 +26,7 @@
     },
     "vaccine": {
       "type": "Vaccine",
-      "disease": "  - Orimune",
+      "disease": "Polio  - Orimune",
       "atcCode": "XM4KG4"
     }
   }

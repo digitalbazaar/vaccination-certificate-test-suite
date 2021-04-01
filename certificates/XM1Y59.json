@@ -8,12 +8,12 @@
     "VaccinationCertificate"
   ],
   "id": "urn:uuid:${uuid}",
-  "name": " - Vaccine sabin oral",
-  "description": " - Vaccine sabin oral",
+  "name": "Polio - Vaccine sabin oral",
+  "description": "Polio - Vaccine sabin oral",
   "expirationDate": null,
   "credentialSubject": {
     "type": "VaccinationEvent",
-    "batchNumber": "237",
+    "batchNumber": "310",
     "administeringCentre": "NiH",
     "healthProfessional": "NiH",
     "countryOfVaccination": "U.S.A.",
@@ -26,7 +26,7 @@
     },
     "vaccine": {
       "type": "Vaccine",
-      "disease": " - Vaccine sabin oral",
+      "disease": "Polio - Vaccine sabin oral",
       "atcCode": "XM1Y59"
     }
   }

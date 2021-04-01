@@ -8,12 +8,12 @@
     "VaccinationCertificate"
   ],
   "id": "urn:uuid:${uuid}",
-  "name": " - tetanus toxoid, combinations with diphtheria toxoid",
-  "description": " - tetanus toxoid, combinations with diphtheria toxoid",
+  "name": "Tetanus  - tetanus toxoid, combinations with diphtheria toxoid",
+  "description": "Tetanus  - tetanus toxoid, combinations with diphtheria toxoid",
   "expirationDate": null,
   "credentialSubject": {
     "type": "VaccinationEvent",
-    "batchNumber": "965",
+    "batchNumber": "369",
     "administeringCentre": "NiH",
     "healthProfessional": "NiH",
     "countryOfVaccination": "U.S.A.",
@@ -26,7 +26,7 @@
     },
     "vaccine": {
       "type": "Vaccine",
-      "disease": " - tetanus toxoid, combinations with diphtheria toxoid",
+      "disease": "Tetanus  - tetanus toxoid, combinations with diphtheria toxoid",
       "atcCode": "XM1G86"
     }
   }

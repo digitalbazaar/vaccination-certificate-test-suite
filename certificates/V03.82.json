@@ -8,12 +8,12 @@
     "VaccinationCertificate"
   ],
   "id": "urn:uuid:${uuid}",
-  "name": " - Streptococcus pneumoniae [pneumococcus]",
-  "description": " - Streptococcus pneumoniae [pneumococcus]",
+  "name": "Pneumonia - Streptococcus pneumoniae [pneumococcus]",
+  "description": "Pneumonia - Streptococcus pneumoniae [pneumococcus]",
   "expirationDate": null,
   "credentialSubject": {
     "type": "VaccinationEvent",
-    "batchNumber": "261",
+    "batchNumber": "811",
     "administeringCentre": "NiH",
     "healthProfessional": "NiH",
     "countryOfVaccination": "U.S.A.",
@@ -26,7 +26,7 @@
     },
     "vaccine": {
       "type": "Vaccine",
-      "disease": " - Streptococcus pneumoniae [pneumococcus]",
+      "disease": "Pneumonia - Streptococcus pneumoniae [pneumococcus]",
       "atcCode": ""
     }
   }

@@ -8,12 +8,12 @@
     "VaccinationCertificate"
   ],
   "id": "urn:uuid:${uuid}",
-  "name": " - Meningovax (-AC) (-C)",
-  "description": " - Meningovax (-AC) (-C)",
+  "name": "Meningitis - Meningovax (-AC) (-C)",
+  "description": "Meningitis - Meningovax (-AC) (-C)",
   "expirationDate": null,
   "credentialSubject": {
     "type": "VaccinationEvent",
-    "batchNumber": "828",
+    "batchNumber": "210",
     "administeringCentre": "NiH",
     "healthProfessional": "NiH",
     "countryOfVaccination": "U.S.A.",
@@ -26,7 +26,7 @@
     },
     "vaccine": {
       "type": "Vaccine",
-      "disease": " - Meningovax (-AC) (-C)",
+      "disease": "Meningitis - Meningovax (-AC) (-C)",
       "atcCode": "XM2280"
     }
   }
