@@ -13,7 +13,7 @@
   "expirationDate": null,
   "credentialSubject": {
     "type": "VaccinationEvent",
-    "batchNumber": "541",
+    "batchNumber": "347",
     "administeringCentre": "NiH",
     "healthProfessional": "NiH",
     "countryOfVaccination": "U.S.A.",
@@ -30,5 +30,5 @@
       "atcCode": ""
     }
   }
-}
+}}
 }
