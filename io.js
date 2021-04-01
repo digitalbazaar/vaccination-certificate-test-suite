@@ -36,13 +36,18 @@ export async function getDir(path) {
  *
  * @param {string} path - A path to a directory.
  *
- * @returns {Promise<Array<string>>} Gets json files as strings.
+ * @returns {Promise<Array<string>>} Gets files as strings.
  */
 export async function getDirFiles(path) {
   const dir = await getDir(path);
   const files = await Promise.all(dir.map(
     fileName => asyncReadFile(join(path, fileName), 'utf8')));
   return files;
+}
+
+export async function getJSONFiles(path) {
+  const strings = await getDirFiles(path);
+  return strings.map(JSON.parse);
 }
 
 /**
