@@ -48,7 +48,7 @@ function createVC(vaccine) {
     ICD10Code,
     ICD9CM
   });
-  const fileName = `${ICD11Code || ICD9CM}.json`;
+  const fileName = `${(ICD11Code || ICD9CM).trim()}.json`;
   const certificate = {
     '@context': contexts,
     type,
