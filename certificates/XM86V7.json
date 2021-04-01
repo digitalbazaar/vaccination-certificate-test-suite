@@ -7,13 +7,13 @@
     "VerifiableCredential",
     "VaccinationCertificate"
   ],
-  "id": "urn:uuid:${uuid}",
+  "id": "urn:uuid:6b1df895-89f7-4370-929a-3c9db2ac8ba6",
   "name": "Diphtheria",
   "description": "Diphtheria",
   "expirationDate": null,
   "credentialSubject": {
     "type": "VaccinationEvent",
-    "batchNumber": "79",
+    "batchNumber": "15",
     "administeringCentre": "NiH",
     "healthProfessional": "NiH",
     "countryOfVaccination": "U.S.A.",

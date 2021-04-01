@@ -7,13 +7,13 @@
     "VerifiableCredential",
     "VaccinationCertificate"
   ],
-  "id": "urn:uuid:${uuid}",
+  "id": "urn:uuid:372c6ae6-8e2b-4aa6-b4be-5af1fc661db9",
   "name": "Mumps",
   "description": "Mumps",
   "expirationDate": null,
   "credentialSubject": {
     "type": "VaccinationEvent",
-    "batchNumber": "812",
+    "batchNumber": "264",
     "administeringCentre": "NiH",
     "healthProfessional": "NiH",
     "countryOfVaccination": "U.S.A.",

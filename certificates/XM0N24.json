@@ -7,13 +7,13 @@
     "VerifiableCredential",
     "VaccinationCertificate"
   ],
-  "id": "urn:uuid:${uuid}",
+  "id": "urn:uuid:6e44f428-23d7-42cf-a365-4c94bfe49d48",
   "name": "Yellow fever",
   "description": "Yellow fever",
   "expirationDate": null,
   "credentialSubject": {
     "type": "VaccinationEvent",
-    "batchNumber": "686",
+    "batchNumber": "257",
     "administeringCentre": "NiH",
     "healthProfessional": "NiH",
     "countryOfVaccination": "U.S.A.",

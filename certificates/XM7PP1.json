@@ -7,13 +7,13 @@
     "VerifiableCredential",
     "VaccinationCertificate"
   ],
-  "id": "urn:uuid:${uuid}",
+  "id": "urn:uuid:ce7dd3a0-6e4e-4982-ae50-faed5be09aff",
   "name": "Rubella",
   "description": "Rubella",
   "expirationDate": null,
   "credentialSubject": {
     "type": "VaccinationEvent",
-    "batchNumber": "979",
+    "batchNumber": "924",
     "administeringCentre": "NiH",
     "healthProfessional": "NiH",
     "countryOfVaccination": "U.S.A.",

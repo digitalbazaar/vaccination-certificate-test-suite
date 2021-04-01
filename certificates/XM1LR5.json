@@ -7,13 +7,13 @@
     "VerifiableCredential",
     "VaccinationCertificate"
   ],
-  "id": "urn:uuid:${uuid}",
+  "id": "urn:uuid:fe075f54-1373-4230-894c-895e69048055",
   "name": "Influenza",
   "description": "Influenza",
   "expirationDate": null,
   "credentialSubject": {
     "type": "VaccinationEvent",
-    "batchNumber": "810",
+    "batchNumber": "296",
     "administeringCentre": "NiH",
     "healthProfessional": "NiH",
     "countryOfVaccination": "U.S.A.",

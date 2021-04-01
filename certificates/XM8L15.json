@@ -7,13 +7,13 @@
     "VerifiableCredential",
     "VaccinationCertificate"
   ],
-  "id": "urn:uuid:${uuid}",
+  "id": "urn:uuid:b60bdfaf-26d7-4ab7-84b8-59566afabade",
   "name": "Measles - Measles, live attenuated",
   "description": "Measles - Measles, live attenuated",
   "expirationDate": null,
   "credentialSubject": {
     "type": "VaccinationEvent",
-    "batchNumber": "863",
+    "batchNumber": "775",
     "administeringCentre": "NiH",
     "healthProfessional": "NiH",
     "countryOfVaccination": "U.S.A.",

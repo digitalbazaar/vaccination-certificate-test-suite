@@ -7,13 +7,13 @@
     "VerifiableCredential",
     "VaccinationCertificate"
   ],
-  "id": "urn:uuid:${uuid}",
+  "id": "urn:uuid:8c76e1ac-0126-4a32-9164-859cf41c7ffb",
   "name": "Meningitis - Meningococcal conjugate (Strain C) vaccine",
   "description": "Meningitis - Meningococcal conjugate (Strain C) vaccine",
   "expirationDate": null,
   "credentialSubject": {
     "type": "VaccinationEvent",
-    "batchNumber": "190",
+    "batchNumber": "653",
     "administeringCentre": "NiH",
     "healthProfessional": "NiH",
     "countryOfVaccination": "U.S.A.",

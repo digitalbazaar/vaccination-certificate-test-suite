@@ -3,6 +3,7 @@
  */
 'use strict';
 
+import {v4 as uuid} from 'uuid';
 import {join} from 'path';
 import {writeJSON, getDir, getCSV} from './io.js';
 
@@ -52,7 +53,7 @@ function createVC(vaccine) {
   const certificate = {
     '@context': contexts,
     type,
-    id: 'urn:uuid:${uuid}',
+    id: `urn:uuid:${uuid()}`,
     name: condition,
     description: condition,
     // the test can fill this in 30 days from test time
@@ -124,13 +125,13 @@ async function generateCertificates() {
     await Promise.all(vaccineList.flatMap(vaccine => {
       // titles have no codes
       if(isTitle(vaccine)) {
-        title = vaccine[0];
+        title = vaccine[0].trim();
         // don't include titles in the list
         return [];
       }
       const subtitle = conditionSubtitle(vaccine);
       if(!subtitle) {
-        title = vaccine[0];
+        title = vaccine[0].trim();
       }
       if(subtitle) {
         // add the condition name before the vaccine name
