@@ -6,8 +6,7 @@
 import {v4 as uuid} from 'uuid';
 import {join} from 'path';
 import {writeJSON, getDir, getCSV} from './io.js';
-
-const conditionsList = 'WHO list of vaccinable Conditions.csv';
+import {paths} from './paths.js';
 
 // FIXME: this needs to generate a real uvci.
 function uvci() {
@@ -87,13 +86,15 @@ function createVC(vaccine) {
 
 // some of the vaccines are are in fact titles
 // with no codes
-function isTitle(vaccine) {
+function noCodes(vaccine) {
   // remove the title and just look at the codes.
   const codes = vaccine.slice(1);
   // if there are no codes this is probably a condition title
   return codes.every(c => c.trim() === '');
 }
 
+// some rows in the csv come directly below a title
+// those rows the condition starts with -
 function conditionSubtitle(vaccine) {
   const [condition] = vaccine;
   if(condition.trim().startsWith('-')) {
@@ -109,27 +110,22 @@ function conditionSubtitle(vaccine) {
 */
 async function generateCertificates() {
   try {
-    const whoData = join(process.cwd(), '.who-data', 'svc');
     try {
-      await getDir(whoData);
+      await getDir(paths.whoData);
     } catch(e) {
       console.error(e);
       console.error('\n Did you run `npm run fetch-who-int-svc`?');
       return;
     }
-    const paths = {
-      conditions: join(whoData, 'input', 'data', conditionsList),
-      certificates: join(process.cwd(), 'certificates')
-    };
     // dir with the csv file of vaccinable conditions
     const records = await getCSV({path: paths.conditions});
     const vaccineList = getVaccines({records});
     let title = null;
     await Promise.all(vaccineList.flatMap(vaccine => {
-      // titles have no codes
-      if(isTitle(vaccine)) {
+      // if a row has no codes don't make a VC from it
+      if(noCodes(vaccine)) {
+        // titles have no codes
         title = vaccine[0].trim();
-        // don't include titles in the list
         return [];
       }
       const subtitle = conditionSubtitle(vaccine);

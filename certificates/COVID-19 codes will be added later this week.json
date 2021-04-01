@@ -7,12 +7,12 @@
     "VerifiableCredential",
     "VaccinationCertificate"
   ],
-  "id": "urn:uvci:YTZjMjQ1MGUtNTUxNC00ZGE4LWEzNGUtYTNjNjE4NTVjODZi",
+  "id": "urn:uvci:OTM3OWU5MzgtNDRkYi00ZDFhLWE2NGEtMWI2NTYwOTJjOTVj",
   "name": "COVID-19",
   "description": "COVID-19",
   "credentialSubject": {
     "type": "VaccinationEvent",
-    "batchNumber": "78",
+    "batchNumber": "769",
     "administeringCentre": "U.S. Public Health Authority",
     "healthProfessional": "U.S. Public Health Authority",
     "countryOfVaccination": "United States of America",
