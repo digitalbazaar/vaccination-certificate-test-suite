@@ -7,16 +7,15 @@
     "VerifiableCredential",
     "VaccinationCertificate"
   ],
-  "id": "urn:uuid:a4c2ad9d-ac0a-4f6d-861e-db1a29d07362",
+  "id": "urn:uvci:NGY1ZDE3YTAtZmE1YS00ZGFkLTg5NjctZWUyY2Q1YTg4Y2Qw",
   "name": "Hepatitis B ",
   "description": "Hepatitis B ",
-  "expirationDate": null,
   "credentialSubject": {
     "type": "VaccinationEvent",
-    "batchNumber": "611",
-    "administeringCentre": "NiH",
-    "healthProfessional": "NiH",
-    "countryOfVaccination": "U.S.A.",
+    "batchNumber": "31",
+    "administeringCentre": "U.S. Public Health Authority",
+    "healthProfessional": "U.S. Public Health Authority",
+    "countryOfVaccination": "United States of America",
     "recipient": {
       "type": "VaccineRecipient",
       "givenName": "JOHN",

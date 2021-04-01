@@ -7,16 +7,15 @@
     "VerifiableCredential",
     "VaccinationCertificate"
   ],
-  "id": "urn:uuid:457924c6-d326-4052-9ac6-43bacc3fff8f",
+  "id": "urn:uvci:MzliYzMzYWMtYWY2Zi00ZDAyLWFiOTUtYjk0N2E2MmMxNzE4",
   "name": "Rotavirus",
   "description": "Rotavirus",
-  "expirationDate": null,
   "credentialSubject": {
     "type": "VaccinationEvent",
-    "batchNumber": "181",
-    "administeringCentre": "NiH",
-    "healthProfessional": "NiH",
-    "countryOfVaccination": "U.S.A.",
+    "batchNumber": "930",
+    "administeringCentre": "U.S. Public Health Authority",
+    "healthProfessional": "U.S. Public Health Authority",
+    "countryOfVaccination": "United States of America",
     "recipient": {
       "type": "VaccineRecipient",
       "givenName": "JOHN",

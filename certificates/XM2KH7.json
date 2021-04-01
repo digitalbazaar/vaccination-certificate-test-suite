@@ -7,16 +7,15 @@
     "VerifiableCredential",
     "VaccinationCertificate"
   ],
-  "id": "urn:uuid:23c20c63-ab00-4318-9a4b-d608b49b32ff",
+  "id": "urn:uvci:ZWY5MGRjZWYtMTc2MC00Nzg3LWEwNTYtNWMwZWEzYjY0NzI1",
   "name": "Measles - Diplovax",
   "description": "Measles - Diplovax",
-  "expirationDate": null,
   "credentialSubject": {
     "type": "VaccinationEvent",
-    "batchNumber": "951",
-    "administeringCentre": "NiH",
-    "healthProfessional": "NiH",
-    "countryOfVaccination": "U.S.A.",
+    "batchNumber": "521",
+    "administeringCentre": "U.S. Public Health Authority",
+    "healthProfessional": "U.S. Public Health Authority",
+    "countryOfVaccination": "United States of America",
     "recipient": {
       "type": "VaccineRecipient",
       "givenName": "JOHN",

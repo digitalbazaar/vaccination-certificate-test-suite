@@ -7,16 +7,15 @@
     "VerifiableCredential",
     "VaccinationCertificate"
   ],
-  "id": "urn:uuid:6e44f428-23d7-42cf-a365-4c94bfe49d48",
+  "id": "urn:uvci:ODYxM2I3YzctNjRmMS00YmZhLTliNjktODZmYmZmMDA5MDU2",
   "name": "Yellow fever",
   "description": "Yellow fever",
-  "expirationDate": null,
   "credentialSubject": {
     "type": "VaccinationEvent",
-    "batchNumber": "257",
-    "administeringCentre": "NiH",
-    "healthProfessional": "NiH",
-    "countryOfVaccination": "U.S.A.",
+    "batchNumber": "940",
+    "administeringCentre": "U.S. Public Health Authority",
+    "healthProfessional": "U.S. Public Health Authority",
+    "countryOfVaccination": "United States of America",
     "recipient": {
       "type": "VaccineRecipient",
       "givenName": "JOHN",

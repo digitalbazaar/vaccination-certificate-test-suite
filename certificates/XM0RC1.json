@@ -7,16 +7,15 @@
     "VerifiableCredential",
     "VaccinationCertificate"
   ],
-  "id": "urn:uuid:c64deafd-209a-490c-bcf0-50d422d44ce8",
+  "id": "urn:uvci:ODIzMTM2YmMtMWNmNi00MmFmLTk5ZWMtODU0NjEzNTE0ZTg4",
   "name": "Japanese encephalitis",
   "description": "Japanese encephalitis",
-  "expirationDate": null,
   "credentialSubject": {
     "type": "VaccinationEvent",
-    "batchNumber": "111",
-    "administeringCentre": "NiH",
-    "healthProfessional": "NiH",
-    "countryOfVaccination": "U.S.A.",
+    "batchNumber": "953",
+    "administeringCentre": "U.S. Public Health Authority",
+    "healthProfessional": "U.S. Public Health Authority",
+    "countryOfVaccination": "United States of America",
     "recipient": {
       "type": "VaccineRecipient",
       "givenName": "JOHN",
