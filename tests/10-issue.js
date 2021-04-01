@@ -3,10 +3,25 @@
  */
 'use strict';
 
-import {getDirFiles} from '../io.js';
+import {getJSONFiles} from '../io.js';
+import {paths} from '../paths.js';
 
-describe('issue', function() {
-  it('a credential', function() {
-    console.log('issue');
+describe('Vaccine Credentials', function() {
+  let implementations;
+  let certificates;
+  before(async function() {
+    implementations = await getJSONFiles(paths.implementations);
+    certificates = await getJSONFiles(paths.certificates);
+  });
+  it('should have certificates', function() {
+    for(const certificate of certificates) {
+      describe(certificate.name, function() {
+        for(const implementation of implementations) {
+          it(`should be issued by ${implementation.name}`, async function() {
+
+          });
+        }
+      });
+    }
   });
 });

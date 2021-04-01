@@ -10,5 +10,6 @@ const whoData = join(process.cwd(), '.who-data', 'svc');
 export const paths = {
   whoData,
   conditions: join(whoData, 'input', 'data', conditionsList),
-  certificates: join(process.cwd(), 'certificates')
+  certificates: join(process.cwd(), 'certificates'),
+  implementations: join(process.cwd(), 'implementations')
 };

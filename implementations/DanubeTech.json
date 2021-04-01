@@ -1,5 +1,5 @@
 {
-  "vendor": "Danube Tech",
+  "name": "Danube Tech",
   "implementation": "uni",
   "issuer": "https://uniissuer.io/1.0/credentials/issue",
   "verifier": "https://univerifier.io/1.0/credentials/verify"
