@@ -8,12 +8,12 @@
     "VaccinationCertificate"
   ],
   "id": "urn:uuid:${uuid}",
-  "name": " - Meruvax",
-  "description": " - Meruvax",
+  "name": "Rubella - Meruvax",
+  "description": "Rubella - Meruvax",
   "expirationDate": null,
   "credentialSubject": {
     "type": "VaccinationEvent",
-    "batchNumber": "120",
+    "batchNumber": "356",
     "administeringCentre": "NiH",
     "healthProfessional": "NiH",
     "countryOfVaccination": "U.S.A.",
@@ -26,7 +26,7 @@
     },
     "vaccine": {
       "type": "Vaccine",
-      "disease": " - Meruvax",
+      "disease": "Rubella - Meruvax",
       "atcCode": "XM9PS9"
     }
   }

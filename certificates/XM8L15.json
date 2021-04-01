@@ -8,12 +8,12 @@
     "VaccinationCertificate"
   ],
   "id": "urn:uuid:${uuid}",
-  "name": " - Measles, live attenuated",
-  "description": " - Measles, live attenuated",
+  "name": "Measles - Measles, live attenuated",
+  "description": "Measles - Measles, live attenuated",
   "expirationDate": null,
   "credentialSubject": {
     "type": "VaccinationEvent",
-    "batchNumber": "752",
+    "batchNumber": "863",
     "administeringCentre": "NiH",
     "healthProfessional": "NiH",
     "countryOfVaccination": "U.S.A.",
@@ -26,7 +26,7 @@
     },
     "vaccine": {
       "type": "Vaccine",
-      "disease": " - Measles, live attenuated",
+      "disease": "Measles - Measles, live attenuated",
       "atcCode": "XM8L15"
     }
   }

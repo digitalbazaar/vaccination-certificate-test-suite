@@ -8,12 +8,12 @@
     "VaccinationCertificate"
   ],
   "id": "urn:uuid:${uuid}",
-  "name": " - tetanus toxoid",
-  "description": " - tetanus toxoid",
+  "name": "Tetanus  - tetanus toxoid",
+  "description": "Tetanus  - tetanus toxoid",
   "expirationDate": null,
   "credentialSubject": {
     "type": "VaccinationEvent",
-    "batchNumber": "726",
+    "batchNumber": "600",
     "administeringCentre": "NiH",
     "healthProfessional": "NiH",
     "countryOfVaccination": "U.S.A.",
@@ -26,7 +26,7 @@
     },
     "vaccine": {
       "type": "Vaccine",
-      "disease": " - tetanus toxoid",
+      "disease": "Tetanus  - tetanus toxoid",
       "atcCode": "XM29H5"
     }
   }
