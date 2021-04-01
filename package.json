@@ -30,6 +30,8 @@
   },
   "homepage": "https://github.com/digitalbazaar/vaccination-certificate-test-suite#readme",
   "dependencies": {
+    "@digitalbazaar/http-client": "^1.0.0",
+    "axios": "^0.21.1",
     "chai": "^4.3.4",
     "csv-parse": "^4.15.3",
     "mocha": "^8.3.2",

@@ -3,6 +3,7 @@
  */
 'use strict';
 
+import axios from 'axios';
 import {getJSONFiles} from '../io.js';
 import {paths} from '../paths.js';
 
@@ -18,7 +19,8 @@ describe('Vaccine Credentials', function() {
       describe(certificate.name, function() {
         for(const implementation of implementations) {
           it(`should be issued by ${implementation.name}`, async function() {
-
+            const result = await axios.post(implementation.issuer, certificate);
+console.log({result});
           });
         }
       });
