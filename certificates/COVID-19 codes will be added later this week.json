@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://www.w3.org/2018/credentials/v1",
+    "https://w3id.org/vaccination/v1"
+  ],
+  "type": [
+    "VerifiableCredential",
+    "VaccinationCertificate"
+  ],
+  "id": "urn:uuid:${uuid}",
+  "name": "COVID-19",
+  "description": "COVID-19",
+  "expirationDate": null,
+  "credentialSubject": {
+    "type": "VaccinationEvent",
+    "batchNumber": "871",
+    "administeringCentre": "NiH",
+    "healthProfessional": "NiH",
+    "countryOfVaccination": "U.S.A.",
+    "recipient": {
+      "type": "VaccineRecipient",
+      "givenName": "JOHN",
+      "familyName": "SMITH",
+      "gender": "Male",
+      "birthDate": "1958-07-17"
+    },
+    "vaccine": {
+      "type": "Vaccine",
+      "disease": "COVID-19",
+      "atcCode": "COVID-19 codes will be added later this week"
+    }
+  }
+}

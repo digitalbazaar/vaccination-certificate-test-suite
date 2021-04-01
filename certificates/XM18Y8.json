@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://www.w3.org/2018/credentials/v1",
+    "https://w3id.org/vaccination/v1"
+  ],
+  "type": [
+    "VerifiableCredential",
+    "VaccinationCertificate"
+  ],
+  "id": "urn:uuid:${uuid}",
+  "name": " - Meningococcal conjugate (Strain C) vaccine",
+  "description": " - Meningococcal conjugate (Strain C) vaccine",
+  "expirationDate": null,
+  "credentialSubject": {
+    "type": "VaccinationEvent",
+    "batchNumber": "625",
+    "administeringCentre": "NiH",
+    "healthProfessional": "NiH",
+    "countryOfVaccination": "U.S.A.",
+    "recipient": {
+      "type": "VaccineRecipient",
+      "givenName": "JOHN",
+      "familyName": "SMITH",
+      "gender": "Male",
+      "birthDate": "1958-07-17"
+    },
+    "vaccine": {
+      "type": "Vaccine",
+      "disease": " - Meningococcal conjugate (Strain C) vaccine",
+      "atcCode": "XM18Y8"
+    }
+  }
+}
