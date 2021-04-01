@@ -7,12 +7,12 @@
     "VerifiableCredential",
     "VaccinationCertificate"
   ],
-  "id": "urn:uvci:YzI2OWJkOGMtOTkwOC00NTEwLWI4MjItMTMyNTA5ODhjNmY1",
+  "id": "urn:uvci:NmU1MTBmOWUtOWNiNi00YjBhLTk0YmYtOGNkMjEyNzZmYjE2",
   "name": "Rubella",
   "description": "Rubella",
   "credentialSubject": {
     "type": "VaccinationEvent",
-    "batchNumber": "983",
+    "batchNumber": "787",
     "administeringCentre": "U.S. Public Health Authority",
     "healthProfessional": "U.S. Public Health Authority",
     "countryOfVaccination": "United States of America",

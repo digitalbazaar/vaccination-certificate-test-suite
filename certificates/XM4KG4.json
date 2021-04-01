@@ -7,12 +7,12 @@
     "VerifiableCredential",
     "VaccinationCertificate"
   ],
-  "id": "urn:uvci:YmUyZmM0M2MtYmVjZS00ZTI1LWE5MzMtN2Q4NzZjMWVlOTIz",
+  "id": "urn:uvci:ZTJjOWIxMmMtNTI5OS00NWI0LWJjMTItN2M2NjYyYTBkNDQy",
   "name": "Polio  - Orimune",
   "description": "Polio  - Orimune",
   "credentialSubject": {
     "type": "VaccinationEvent",
-    "batchNumber": "901",
+    "batchNumber": "575",
     "administeringCentre": "U.S. Public Health Authority",
     "healthProfessional": "U.S. Public Health Authority",
     "countryOfVaccination": "United States of America",

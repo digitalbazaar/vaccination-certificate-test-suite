@@ -7,12 +7,12 @@
     "VerifiableCredential",
     "VaccinationCertificate"
   ],
-  "id": "urn:uvci:ZGY3YzNlNDgtMWVhYS00MzJiLWIyMzItYzE5NTRlMDU4Nzgx",
+  "id": "urn:uvci:OTE4ODIxYTUtNGU5MS00ZGQxLWI3YjYtNzZmOWM1ZWFmMzMz",
   "name": "Diphtheria",
   "description": "Diphtheria",
   "credentialSubject": {
     "type": "VaccinationEvent",
-    "batchNumber": "537",
+    "batchNumber": "461",
     "administeringCentre": "U.S. Public Health Authority",
     "healthProfessional": "U.S. Public Health Authority",
     "countryOfVaccination": "United States of America",

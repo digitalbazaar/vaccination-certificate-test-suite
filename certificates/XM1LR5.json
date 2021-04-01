@@ -7,12 +7,12 @@
     "VerifiableCredential",
     "VaccinationCertificate"
   ],
-  "id": "urn:uvci:NjFiNDk4YzYtOGFlYy00MGQ3LWFlYjUtODQ0ZTg3M2U0MTli",
+  "id": "urn:uvci:ODA2NTY2MGItMDEyOS00Y2QxLTkzYmUtODUyNmYzYzA2NmRi",
   "name": "Influenza",
   "description": "Influenza",
   "credentialSubject": {
     "type": "VaccinationEvent",
-    "batchNumber": "647",
+    "batchNumber": "542",
     "administeringCentre": "U.S. Public Health Authority",
     "healthProfessional": "U.S. Public Health Authority",
     "countryOfVaccination": "United States of America",
