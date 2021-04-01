@@ -7,13 +7,13 @@
     "VerifiableCredential",
     "VaccinationCertificate"
   ],
-  "id": "urn:uuid:${uuid}",
+  "id": "urn:uuid:fb77f989-9dc8-4b9a-af98-092e3b6d6e10",
   "name": "Meningitis - Meningovax (-AC) (-C)",
   "description": "Meningitis - Meningovax (-AC) (-C)",
   "expirationDate": null,
   "credentialSubject": {
     "type": "VaccinationEvent",
-    "batchNumber": "210",
+    "batchNumber": "583",
     "administeringCentre": "NiH",
     "healthProfessional": "NiH",
     "countryOfVaccination": "U.S.A.",

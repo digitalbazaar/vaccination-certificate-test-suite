@@ -7,13 +7,13 @@
     "VerifiableCredential",
     "VaccinationCertificate"
   ],
-  "id": "urn:uuid:${uuid}",
+  "id": "urn:uuid:755f2923-4003-4ec5-a67f-de6351dd0025",
   "name": "Meningitis - Meningococcal vaccines",
   "description": "Meningitis - Meningococcal vaccines",
   "expirationDate": null,
   "credentialSubject": {
     "type": "VaccinationEvent",
-    "batchNumber": "529",
+    "batchNumber": "971",
     "administeringCentre": "NiH",
     "healthProfessional": "NiH",
     "countryOfVaccination": "U.S.A.",
