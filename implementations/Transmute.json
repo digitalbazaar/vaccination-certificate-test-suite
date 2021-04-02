@@ -1,6 +1,9 @@
 {
   "name": "Transmute",
   "implementation": "transmute",
-  "issuer": "https://vc.transmute.world/v0.0.0/credentials/issueCredential",
+  "issuer": {
+    "id": "did:key:z6MkjRagNiMu91DduvCvgEsqLZDVzrJzFrwahc4tXLt9DoHd",
+    "endpoint": "https://vc.transmute.world/v0.0.0/credentials/issueCredential"
+  },
   "verifier": "https://vc.transmute.world/v0.1.0/verify/credentials"
 }

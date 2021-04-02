@@ -1,6 +1,9 @@
 {
   "name": "SICPA",
   "implementation": "ocs",
-  "issuer": "https://svip-interop.ocs-support.com/api/credentials/issueCredential",
+  "issuer": {
+    "id": "did:sov:staging:PiEVD2uU2qKEQ5oxx1BJ6A",
+    "endpoint": "https://svip-interop.ocs-support.com/api/credentials/issueCredential"
+  },
   "verifier": "https://svip-interop.ocs-support.com/api/verifier/credentials"
 }
