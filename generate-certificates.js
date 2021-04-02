@@ -53,7 +53,12 @@ function createVC(vaccine) {
     ICD10Code,
     ICD9CM
   });
-  const fileName = `${(ICD11Code || ICD9CM).trim()}.json`;
+  // FIXME this is not a real atcCode
+  // additionally ICD11Codes are probably better
+  // than atcCodes
+  // @see https://github.com/w3c-ccg/vaccination-vocab/issues/16
+  const atcCode = (ICD11Code || ICD9CM).trim();
+  const fileName = `${atcCode}.json`;
   const certificate = {
     '@context': contexts,
     type,
@@ -76,8 +81,7 @@ function createVC(vaccine) {
       vaccine: {
         type: 'Vaccine',
         disease: condition,
-        // NOTE: this needs to be updated
-        atcCode: ICD11Code
+        atcCode
       }
     }
   };

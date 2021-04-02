@@ -7,12 +7,12 @@
     "VerifiableCredential",
     "VaccinationCertificate"
   ],
-  "id": "urn:uvci:YWUzZDBjZTgtZjllZC00NDkzLWI1YmYtOTMxZWY1MzRlOTI5",
+  "id": "urn:uvci:ZmM4ZDcyNzAtYWI0ZC00NDE3LTlmYmEtY2Q3NGRkNzUzMmQ5",
   "name": "Rubella - Meruvax",
   "description": "Rubella - Meruvax",
   "credentialSubject": {
     "type": "VaccinationEvent",
-    "batchNumber": "338",
+    "batchNumber": "92",
     "administeringCentre": "U.S. Public Health Authority",
     "healthProfessional": "U.S. Public Health Authority",
     "countryOfVaccination": "United States of America",
