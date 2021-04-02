@@ -1,4 +1,5 @@
 import axios from 'axios';
+import {uvci} from '../helpers.js';
 
 const _headers = {
   Accept: 'application/ld+json,application/json',
@@ -16,13 +17,20 @@ export default class Implementation {
         headers.Authorization = `Bearer ${auth.accessToken}`;
       }
       const body = {
-        credential: {...credential, issuer: this.settings.issuer.id}
+        credential: {
+          ...credential,
+          id: `urn:uvci:${uvci()}`,
+          issuanceDate: new Date().toISOString(),
+          issuer: this.settings.issuer.id
+        }
       };
-  console.log({body, settings: this.settings});
-        const result = await axios.post(this.settings.issuer.endpoint, JSON.stringify(body), {headers});
+      const result = await axios.post(
+        this.settings.issuer.endpoint, JSON.stringify(body), {headers});
       return result;
     } catch(e) {
+      // FIXME this is just to make debugging easier
       console.error(e);
+      throw e;
     }
   }
   async verify(credential) {
