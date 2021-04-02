@@ -7,12 +7,12 @@
     "VerifiableCredential",
     "VaccinationCertificate"
   ],
-  "id": "urn:uvci:NjljYjI3NDMtYjAzZC00MzM1LWI4MTEtYTY5YjhmZThiN2Iz",
+  "id": "urn:uvci:YjEyYzJiYzMtZjc3NC00NjZjLTgzODctZmE1ZTMyYjQzNTdl",
   "name": "Typhoid",
   "description": "Typhoid",
   "credentialSubject": {
     "type": "VaccinationEvent",
-    "batchNumber": "720",
+    "batchNumber": "251",
     "administeringCentre": "U.S. Public Health Authority",
     "healthProfessional": "U.S. Public Health Authority",
     "countryOfVaccination": "United States of America",
@@ -26,7 +26,7 @@
     "vaccine": {
       "type": "Vaccine",
       "disease": "Typhoid",
-      "atcCode": "XM8BU8 "
+      "atcCode": "XM8BU8"
     }
   }
 }

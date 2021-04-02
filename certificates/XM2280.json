@@ -7,12 +7,12 @@
     "VerifiableCredential",
     "VaccinationCertificate"
   ],
-  "id": "urn:uvci:MWQ5MmYzYjQtZjlkZS00MjY3LWEwNzQtZTM1ZWIxYWY2ZmRl",
+  "id": "urn:uvci:NjAxNDI4NDctY2E3NC00MDc5LWFiZjEtZjE0MjhhNGFmZDBj",
   "name": "Meningitis - Meningovax (-AC) (-C)",
   "description": "Meningitis - Meningovax (-AC) (-C)",
   "credentialSubject": {
     "type": "VaccinationEvent",
-    "batchNumber": "719",
+    "batchNumber": "374",
     "administeringCentre": "U.S. Public Health Authority",
     "healthProfessional": "U.S. Public Health Authority",
     "countryOfVaccination": "United States of America",
