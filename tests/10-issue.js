@@ -6,6 +6,9 @@
 import Implementation from './implementation.js';
 import {getJSONFiles} from '../io.js';
 import {paths} from '../paths.js';
+import * as chai from 'chai';
+
+const should = chai.should();
 
 // do not test these implementations issuers or verifiers
 const notTest = ['Dock', 'Factom', 'SICPA', 'Trybe'];
@@ -14,6 +17,8 @@ describe('Vaccine Credentials', function() {
   let implementations;
   let certificates;
   before(async function() {
+    // allow 10 seconds for issuing
+    this.timeout(10000);
     const vendors = await getJSONFiles(paths.implementations);
     // TODO remove filter for Digital Bazaar only
     implementations = vendors.filter(v => !notTest.includes(v.name)).filter(v => v.name === 'Digital Bazaar');
@@ -25,7 +30,12 @@ describe('Vaccine Credentials', function() {
         for(const settings of implementations) {
           it(`should be issued by ${settings.name}`, async function() {
             const implementation = new Implementation(settings);
-            await implementation.issue({credential: certificate});
+            const response = await implementation.issue(
+              {credential: certificate});
+            should.exist(response);
+            response.status.should.equal(201);
+            should.exist(response.data);
+            response.data.should.be.an('object');
           });
         }
       });

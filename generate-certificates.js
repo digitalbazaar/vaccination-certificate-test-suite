@@ -3,16 +3,11 @@
  */
 'use strict';
 
-import {v4 as uuid} from 'uuid';
 import {join} from 'path';
 import {writeJSON, getDir, getCSV} from './io.js';
 import {paths} from './paths.js';
+import {uvci} from './helpers.js';
 
-// FIXME: this needs to generate a real uvci.
-function uvci() {
-  const input = Buffer.from(uuid());
-  return input.toString('base64');
-}
 function getVaccines({records, start = 1}) {
   // the sections of the csv are separated by empty rows
   const firstEmpty = records.findIndex(r => r.every(e => e === ''));
