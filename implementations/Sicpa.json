@@ -1,5 +1,5 @@
 {
-  "name": "sicpa",
+  "name": "SICPA",
   "implementation": "ocs",
   "issuer": "https://svip-interop.ocs-support.com/api/credentials/issueCredential",
   "verifier": "https://svip-interop.ocs-support.com/api/verifier/credentials"

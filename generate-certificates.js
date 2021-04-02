@@ -54,8 +54,7 @@ function createVC(vaccine) {
     ICD9CM
   });
   // FIXME this is not a real atcCode
-  // additionally ICD11Codes are probably better
-  // than atcCodes
+  // additionally ICD11Codes are probably better than atcCodes
   // @see https://github.com/w3c-ccg/vaccination-vocab/issues/16
   const atcCode = (ICD11Code || ICD9CM).trim();
   const fileName = `${atcCode}.json`;
