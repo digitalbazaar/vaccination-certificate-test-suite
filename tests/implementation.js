@@ -1,5 +1,8 @@
 import axios from 'axios';
 import {uvci} from '../helpers.js';
+import https from 'https';
+
+const httpsAgent = new https.Agent({rejectUnauthorized: false});
 
 const _headers = {
   Accept: 'application/ld+json,application/json',
@@ -30,10 +33,11 @@ export default class Implementation {
           issuer: this.settings.issuer.id
         }
       };
-// for debugging purposes only
-console.log(body);
       const result = await axios.post(
-        this.settings.issuer.endpoint, JSON.stringify(body), {headers});
+        this.settings.issuer.endpoint,
+        JSON.stringify(body),
+        {headers, httpsAgent}
+      );
       return result;
     } catch(e) {
 // FIXME this is just to make debugging easier

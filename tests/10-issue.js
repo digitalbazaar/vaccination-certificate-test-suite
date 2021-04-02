@@ -21,7 +21,7 @@ describe('Vaccine Credentials', function() {
     this.timeout(10000);
     const vendors = await getJSONFiles(paths.implementations);
     // TODO remove filter for Digital Bazaar only
-    implementations = vendors.filter(v => !notTest.includes(v.name)).filter(v => v.name === 'Digital Bazaar');
+    implementations = vendors.filter(v => !notTest.includes(v.name));
     certificates = await getJSONFiles(paths.certificates);
   });
   it('should have certificates', function() {
