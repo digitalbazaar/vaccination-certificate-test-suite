@@ -16,20 +16,28 @@ export default class Implementation {
       if(auth && auth.type === 'oauth2-bearer-token') {
         headers.Authorization = `Bearer ${auth.accessToken}`;
       }
+      const expires = () => {
+        const date = new Date();
+        date.setMonth(date.getMonth() + 2);
+        return date.toISOString();
+      };
       const body = {
         credential: {
           ...credential,
           id: `urn:uvci:${uvci()}`,
           issuanceDate: new Date().toISOString(),
+          expirationDate: expires(),
           issuer: this.settings.issuer.id
         }
       };
+// for debugging purposes only
+console.log(body);
       const result = await axios.post(
         this.settings.issuer.endpoint, JSON.stringify(body), {headers});
       return result;
     } catch(e) {
-      // FIXME this is just to make debugging easier
-      console.error(e);
+// FIXME this is just to make debugging easier
+console.error(e);
       throw e;
     }
   }
