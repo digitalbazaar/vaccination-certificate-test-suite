@@ -17,8 +17,6 @@ describe('Vaccine Credentials', function() {
   let implementations;
   let certificates;
   before(async function() {
-    // allow 10 seconds for issuing
-    this.timeout(10000);
     const vendors = await getJSONFiles(paths.implementations);
     // TODO remove filter for Digital Bazaar only
     implementations = vendors.filter(v => !notTest.includes(v.name));
