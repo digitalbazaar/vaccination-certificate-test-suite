@@ -40,8 +40,8 @@ export default class Implementation {
       );
       return result;
     } catch(e) {
-// FIXME this is just to make debugging easier
-console.error(e);
+      // this is just to make debugging easier
+      //console.error(e);
       throw e;
     }
   }
