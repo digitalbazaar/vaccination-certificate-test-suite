@@ -45,7 +45,22 @@ export default class Implementation {
       throw e;
     }
   }
-  async verify(credential) {
-
+  async verify({credential, auth}) {
+    try {
+      const headers = {..._headers};
+      if(auth && auth.type === 'oauth2-bearer-token') {
+        headers.Authorization = `Bearer ${auth.accessToken}`;
+      }
+      const result = await axios.post(
+        this.settings.verifier,
+        JSON.stringify({credential}),
+        {headers, httpsAgent}
+      );
+      return result;
+    } catch(e) {
+      // this is just to make debugging easier
+      //console.error(e);
+      throw e;
+    }
   }
 }
