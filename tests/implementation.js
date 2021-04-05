@@ -65,8 +65,10 @@ export default class Implementation {
       return result;
     } catch(e) {
       // this is just to make debugging easier
-      console.error(e);
-      console.log(e.response.data);
+      if(e && e.response && e.response.data) {
+        console.log(e.response.data);
+        throw new Error(JSON.stringify(e.response.data, null, 2));
+      }
       throw e;
     }
   }
