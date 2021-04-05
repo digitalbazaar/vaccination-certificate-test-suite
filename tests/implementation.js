@@ -51,15 +51,22 @@ export default class Implementation {
       if(auth && auth.type === 'oauth2-bearer-token') {
         headers.Authorization = `Bearer ${auth.accessToken}`;
       }
+      const body = {
+        verifiableCredential: credential,
+        options: {
+          checks: ['proof'],
+        },
+      };
       const result = await axios.post(
         this.settings.verifier,
-        JSON.stringify({credential}),
+        body,
         {headers, httpsAgent}
       );
       return result;
     } catch(e) {
       // this is just to make debugging easier
-      //console.error(e);
+      console.error(e);
+      console.log(e.response.data);
       throw e;
     }
   }
