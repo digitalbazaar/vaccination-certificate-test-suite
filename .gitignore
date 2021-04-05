@@ -8,6 +8,7 @@
 certificates/
 results/
 reports/
+mochawesome-report/
 TAGS
 config.json
 node_modules/
