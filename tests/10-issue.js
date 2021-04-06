@@ -71,7 +71,13 @@ describe('Vaccine Credentials', function() {
             const testTitle = `should be verified by ${verifierSettings.name}`;
             it(testTitle, async function() {
               const implementation = new Implementation(verifierSettings);
-              const result = await implementation.verify({credential});
+              const response = await implementation.verify({credential});
+              should.exist(response);
+              // verifier returns 200
+              response.status.should.equal(200);
+              should.exist(response.data);
+              // verifier reponses vary but are all objects
+              response.data.should.be.an('object');
             });
           }
         });
