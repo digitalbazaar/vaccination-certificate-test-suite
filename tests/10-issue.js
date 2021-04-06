@@ -12,15 +12,27 @@ import implementations from '../implementations.cjs';
 const should = chai.should();
 
 // do not test these implementations' issuers or verifiers
-const notTest = ['Dock', 'Factom', 'Sicpa', 'Trybe'];
+const notTest = [
+  'Dock',
+  'Factom',
+  'Sicpa',
+  // Error: "Credential could not be verified" for mulitple VCs
+  // from multiple vendors.
+  'Trybe',
+  // verifier unable to resolve did:key and other issuers
+  'DanubeTech',
+  // verifier returns 404 for all credentials
+  'Trustbloc',
+  // Unable to filter proofs: method-not-supported for multiple VCs
+  // from different vendors (was able to verify themselves, Mattr, & others)
+  'Spruce'
+];
 
 // remove the notTest implementations
 for(const fileName of notTest) {
   delete implementations[fileName];
 }
 
-// we need this as a test so the implementations
-// and certificates have been loaded
 describe('Vaccine Credentials', function() {
   for(const key in certificates) {
     const certificate = certificates[key];
@@ -35,6 +47,8 @@ describe('Vaccine Credentials', function() {
             const response = await implementation.issue(
               {credential: certificate});
             should.exist(response);
+            // this credential is not tested
+            // we just send it to each verifier
             credential = response.data;
           });
           // this ensures the implementation issuer

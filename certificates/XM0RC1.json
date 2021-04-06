@@ -7,12 +7,12 @@
     "VerifiableCredential",
     "VaccinationCertificate"
   ],
-  "id": "urn:uvci:ZmZjNWMwNjAtYjAyOC00NDA4LWJjNDktNThkNmZiZjNmYWU5",
+  "id": "urn:uvci:NDkyN2MzMTQtN2UwNC00MzU2LTlkOGUtODBhMzk5Y2RjZTQ3",
   "name": "Japanese encephalitis",
   "description": "Japanese encephalitis",
   "credentialSubject": {
     "type": "VaccinationEvent",
-    "batchNumber": "135",
+    "batchNumber": "52",
     "administeringCentre": "U.S. Public Health Authority",
     "healthProfessional": "U.S. Public Health Authority",
     "countryOfVaccination": "United States of America",

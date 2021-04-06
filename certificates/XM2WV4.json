@@ -7,12 +7,12 @@
     "VerifiableCredential",
     "VaccinationCertificate"
   ],
-  "id": "urn:uvci:Yjg0Yjc4ZWQtNGEyYi00Zjk5LTk4MGItNjk0Njk4MzNkZTk5",
+  "id": "urn:uvci:ZGE0ODRhMTMtYTE3ZS00YzY2LWE2M2ItMjk0YjM5OTJlODhk",
   "name": "Meningitis - Meningococcal vaccines",
   "description": "Meningitis - Meningococcal vaccines",
   "credentialSubject": {
     "type": "VaccinationEvent",
-    "batchNumber": "468",
+    "batchNumber": "247",
     "administeringCentre": "U.S. Public Health Authority",
     "healthProfessional": "U.S. Public Health Authority",
     "countryOfVaccination": "United States of America",
