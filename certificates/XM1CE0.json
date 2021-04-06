@@ -7,12 +7,12 @@
     "VerifiableCredential",
     "VaccinationCertificate"
   ],
-  "id": "urn:uvci:NTdjNjBiY2MtMzc4Mi00NWVhLWE2MjUtYjIwNTZhZmY3NDQy",
+  "id": "urn:uvci:YjA5YzYxMjYtMjQ3My00NTJjLWEyZTMtYjY2NjczMDE0NTNi",
   "name": "Rotavirus",
   "description": "Rotavirus",
   "credentialSubject": {
     "type": "VaccinationEvent",
-    "batchNumber": "807",
+    "batchNumber": "259",
     "administeringCentre": "U.S. Public Health Authority",
     "healthProfessional": "U.S. Public Health Authority",
     "countryOfVaccination": "United States of America",
