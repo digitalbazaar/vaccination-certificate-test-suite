@@ -7,12 +7,12 @@
     "VerifiableCredential",
     "VaccinationCertificate"
   ],
-  "id": "urn:uvci:ZGE5YjE3YTEtNDU3Mi00N2IwLThlNjEtMmU2YmMxZTY1NDdk",
+  "id": "urn:uvci:YjY4ZWY5MzItOGQ0Ni00NTg3LTlkNGQtMDI2MjJmNDMzYjA0",
   "name": "Cervical cancer (Human papilloma virus)",
   "description": "Cervical cancer (Human papilloma virus)",
   "credentialSubject": {
     "type": "VaccinationEvent",
-    "batchNumber": "967",
+    "batchNumber": "172",
     "administeringCentre": "U.S. Public Health Authority",
     "healthProfessional": "U.S. Public Health Authority",
     "countryOfVaccination": "United States of America",
