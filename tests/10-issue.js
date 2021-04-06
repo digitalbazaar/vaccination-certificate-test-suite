@@ -11,7 +11,7 @@ import implementations from '../implementations.cjs';
 
 const should = chai.should();
 
-// do not test these implementations issuers or verifiers
+// do not test these implementations' issuers or verifiers
 const notTest = ['Dock', 'Factom', 'Sicpa', 'Trybe'];
 
 // remove the notTest implementations
@@ -25,18 +25,20 @@ describe('Vaccine Credentials', function() {
   for(const key in certificates) {
     const certificate = certificates[key];
     describe(certificate.name, function() {
+      // this is the credential for the verifier tests
       let credential = null;
-      for(const key in implementations) {
-        const settings = implementations[key];
+      for(const issuerKey in implementations) {
+        const settings = implementations[issuerKey];
         describe(settings.name, function() {
           before(async function() {
             const implementation = new Implementation(settings);
             const response = await implementation.issue(
               {credential: certificate});
             should.exist(response);
-            testCredential(response.data);
             credential = response.data;
           });
+          // this ensures the implementation issuer
+          // issues correctly
           it(`should be issued by ${settings.name}`, async function() {
             const implementation = new Implementation(settings);
             const response = await implementation.issue(
@@ -48,11 +50,14 @@ describe('Vaccine Credentials', function() {
             credential.credentialSubject.should.eql(
               certificate.credentialSubject);
           });
-          for(const _key in implementations) {
-            const _settings = implementations[_key];
-            it(`should be verified by ${_settings.name}`, async function() {
-              const i = new Implementation(_settings);
-              await i.verify({credential});
+          // this sends a credential issued by the implementation
+          // to each verifier
+          for(const verifierKey in implementations) {
+            const verifierSettings = implementations[verifierKey];
+            const testTitle = `should be verified by ${verifierSettings.name}`;
+            it(testTitle, async function() {
+              const implementation = new Implementation(verifierSettings);
+              const result = await implementation.verify({credential});
             });
           }
         });
