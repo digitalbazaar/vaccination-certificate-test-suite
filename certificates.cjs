@@ -7,4 +7,4 @@ const requireDir = require('require-dir');
 
 const dir = requireDir('./certificates');
 
-module.exports = dir;
+module.exports = Object.values(dir);

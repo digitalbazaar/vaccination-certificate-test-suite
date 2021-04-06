@@ -7,12 +7,12 @@
     "VerifiableCredential",
     "VaccinationCertificate"
   ],
-  "id": "urn:uvci:YzA1Yjc4MDYtZmEzMS00YWQxLTgwMzQtY2Y3MTFjZWRkZDUw",
+  "id": "urn:uvci:Mjg4OWQ1ZDAtOThhOC00NzZlLWIwNTQtM2JhYjQxZDZkYzQ1",
   "name": "Varicella (chicken pox) ",
   "description": "Varicella (chicken pox) ",
   "credentialSubject": {
     "type": "VaccinationEvent",
-    "batchNumber": "687",
+    "batchNumber": "950",
     "administeringCentre": "U.S. Public Health Authority",
     "healthProfessional": "U.S. Public Health Authority",
     "countryOfVaccination": "United States of America",

@@ -7,12 +7,12 @@
     "VerifiableCredential",
     "VaccinationCertificate"
   ],
-  "id": "urn:uvci:YWY2YzMzZTUtYTQxMi00M2VjLWFhZTQtODJkZDBmNDNlY2Iy",
+  "id": "urn:uvci:MWZjYWM5ODMtNWEyMy00NGViLWE3OTgtNjFlMzIxOGQzYzcx",
   "name": "Mumps",
   "description": "Mumps",
   "credentialSubject": {
     "type": "VaccinationEvent",
-    "batchNumber": "53",
+    "batchNumber": "648",
     "administeringCentre": "U.S. Public Health Authority",
     "healthProfessional": "U.S. Public Health Authority",
     "countryOfVaccination": "United States of America",

@@ -7,12 +7,12 @@
     "VerifiableCredential",
     "VaccinationCertificate"
   ],
-  "id": "urn:uvci:ODk1ZjRhZGMtYWZkOC00MGM1LWI2YzQtNDRiYjM5MGVlMTE0",
+  "id": "urn:uvci:MWUwNDA2MzctZGRjYi00NmE1LTkyZmMtNGMyNjlmYWY3MDMz",
   "name": "Measles - Diplovax",
   "description": "Measles - Diplovax",
   "credentialSubject": {
     "type": "VaccinationEvent",
-    "batchNumber": "155",
+    "batchNumber": "287",
     "administeringCentre": "U.S. Public Health Authority",
     "healthProfessional": "U.S. Public Health Authority",
     "countryOfVaccination": "United States of America",

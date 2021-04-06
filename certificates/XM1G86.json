@@ -7,12 +7,12 @@
     "VerifiableCredential",
     "VaccinationCertificate"
   ],
-  "id": "urn:uvci:Yjc3NTdjMTEtNjNiMi00ZGExLTk2MDEtYTJmM2IzYjM4YzUy",
+  "id": "urn:uvci:MGUwNWM0MDktYWExMy00MGYzLWIxZjctMmJiOTdkOTAyN2Ni",
   "name": "Tetanus - tetanus toxoid, combinations with diphtheria toxoid",
   "description": "Tetanus - tetanus toxoid, combinations with diphtheria toxoid",
   "credentialSubject": {
     "type": "VaccinationEvent",
-    "batchNumber": "216",
+    "batchNumber": "932",
     "administeringCentre": "U.S. Public Health Authority",
     "healthProfessional": "U.S. Public Health Authority",
     "countryOfVaccination": "United States of America",
