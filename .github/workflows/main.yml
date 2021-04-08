@@ -34,6 +34,7 @@ jobs:
     - name: Run eslint
       run: npm run lint
   update-s3-bucket:
+    runs-on: ubuntu-latest
     steps:
     - name: S3 Sync
     - uses: jakejarvis/s3-sync-action@master
