@@ -5,7 +5,6 @@
 .project
 .settings
 .who-data/
-certificates/
 results/
 reports/
 mochawesome-report/
