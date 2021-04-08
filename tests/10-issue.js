@@ -48,7 +48,7 @@ const results = certificates.map(certificate => ({
 describe('Vaccine Credentials', function() {
   after(async function() {
     await writeJSON({
-      path: `reports/report-${Date.now()}.json`,
+      path: `results/results-${Date.now()}.json`,
       data: results
     });
   });
