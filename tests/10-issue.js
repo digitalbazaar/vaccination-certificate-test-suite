@@ -20,8 +20,6 @@ const notTest = [
   // Error: "Credential could not be verified" for mulitple VCs
   // from multiple vendors.
   'Trybe',
-  // verifier unable to resolve did:key and other issuers
-  'Danube Tech',
   // verifier returns 404 for all credentials
   'Trustbloc',
   // Unable to filter proofs: method-not-supported for multiple VCs
