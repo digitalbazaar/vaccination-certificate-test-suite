@@ -1,11 +1,15 @@
 name: Node.js CI
 
-on: [push]
+on:
+  schedule:
+    # update the integration suite once per day
+    # this will happen at 13:00 UTC every day
+    - cron: '0 13 * * *'
 
 jobs:
   test-node:
     runs-on: ubuntu-latest
-    timeout-minutes: 35
+    timeout-minutes: 45
     strategy:
       matrix:
         node-version: [14.x]
