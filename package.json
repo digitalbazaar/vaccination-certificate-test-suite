@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "mocha tests/ --reporter mochawesome --require mochawesome/register --timeout 15000",
+    "test": "mocha tests/ --reporter ./node_modules/mocha-w3c-interop-reporter/index.js --timeout 15000",
     "test-node": "mocha tests/ --reporter mochawesome --require mochawesome/register --timeout 15000",
     "generate-certificates": "node generate-certificates.js",
     "fetch-who-int-svc": "if [ ! -e .who-data/svc ]; then git clone --depth 1 https://github.com/who-int/svc.git .who-data/svc; fi",
@@ -38,6 +38,7 @@
     "chai": "^4.3.4",
     "csv-parse": "^4.15.3",
     "mocha": "^8.3.2",
+    "mocha-w3c-interop-reporter": "github:digitalbazaar/mocha-w3c-interop-reporter#initial",
     "mochawesome": "^6.2.2",
     "require-dir": "^1.2.0",
     "uuid": "^8.3.2"
