@@ -57,6 +57,12 @@ describe('Vaccine Credentials', function() {
     const certificateReport = results.find(
       r => r.certificate.id === certificate.id);
     describe(certificate.name, function() {
+      before(function() {
+        // this will tell the report
+        // to make an interop matrix with these results
+        this.test.parent.matrix = true;
+        this.test.parent.report = true;
+      });
       // this is the credential for the verifier tests
       let credential = null;
       for(const issuer of implementations) {
