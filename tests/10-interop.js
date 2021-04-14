@@ -8,7 +8,6 @@ import Implementation from './implementation.js';
 import {testCredential} from './assertions.js';
 import certificates from '../certificates.cjs';
 import allVendors from '../implementations.cjs';
-import {writeJSON} from '../io.js';
 
 const should = chai.should();
 
@@ -44,25 +43,20 @@ const results = certificates.map(certificate => ({
 }));
 
 describe('Vaccine Credentials', function() {
-  after(async function() {
-    const fileName = `results-${Date.now()}.json`;
-    console.log(`writing ${fileName}`);
-    await writeJSON({
-      path: `results/${fileName}`,
-      data: results
-    });
-  });
   for(const certificate of certificates) {
     // finds the report for this certificate
     const certificateReport = results.find(
       r => r.certificate.id === certificate.id);
     describe(certificate.name, function() {
+      const columnNames = [];
       before(function() {
         // this will tell the report
         // to make an interop matrix with these results
         this.test.parent.matrix = true;
         this.test.parent.report = true;
+        this.test.parent.columns = columnNames;
       });
+
       // this is the credential for the verifier tests
       let credential = null;
       for(const issuer of implementations) {
@@ -72,6 +66,10 @@ describe('Vaccine Credentials', function() {
         describe(issuer.name, function() {
           before(async function() {
             try {
+              // set the display name for this row
+              this.test.parent.rowName = issuer.name;
+              // ensure this implementation is a column in the matrix
+              columnNames.push(issuer.name);
               const implementation = new Implementation(issuer);
               const response = await implementation.issue(
                 {credential: certificate});
