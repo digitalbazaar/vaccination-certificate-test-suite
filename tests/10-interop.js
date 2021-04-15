@@ -51,7 +51,7 @@ describe('Vaccine Credentials', function() {
       const columnNames = [];
       before(function() {
         // this will tell the report
-        // to make an interop matrix with these results
+        // to make an interop matrix with this suite
         this.test.parent.matrix = true;
         this.test.parent.report = true;
         this.test.parent.columns = columnNames;
@@ -104,6 +104,9 @@ describe('Vaccine Credentials', function() {
               report => report.verifier.name === verifier.name);
             const testTitle = `should be verified by ${verifier.name}`;
             it(testTitle, async function() {
+              // this tells the test report which cell
+              // in the interop matrix the result goes in
+              this.test.cell = [verifier.name, issuer.name];
               should.exist(credential);
               const implementation = new Implementation(verifier);
               const response = await implementation.verify({credential});
