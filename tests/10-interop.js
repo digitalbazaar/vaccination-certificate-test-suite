@@ -106,7 +106,7 @@ describe('Vaccine Credentials', function() {
             it(testTitle, async function() {
               // this tells the test report which cell
               // in the interop matrix the result goes in
-              this.test.cell = [verifier.name, issuer.name];
+              this.test.cell = {columnId: verifier.name, rowId: issuer.name};
               should.exist(credential);
               const implementation = new Implementation(verifier);
               const response = await implementation.verify({credential});
