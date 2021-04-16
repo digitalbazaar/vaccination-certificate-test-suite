@@ -7,12 +7,12 @@
     "VerifiableCredential",
     "VaccinationCertificate"
   ],
-  "id": "urn:uvci:ZTAyOTI3MzQtOGEyMi00YjJhLTg4ZDYtOTcyMDVjZDk4YzIz",
+  "id": "urn:uvci:YmFhNWYzYTgtMjNlYy00NTg5LTg2YzItYzlhOTQ4Njc5NDVk",
   "name": "Yellow fever",
   "description": "Yellow fever",
   "credentialSubject": {
     "type": "VaccinationEvent",
-    "batchNumber": "628",
+    "batchNumber": "985",
     "administeringCentre": "U.S. Public Health Authority",
     "healthProfessional": "U.S. Public Health Authority",
     "countryOfVaccination": "United States of America",
