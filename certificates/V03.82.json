@@ -7,12 +7,12 @@
     "VerifiableCredential",
     "VaccinationCertificate"
   ],
-  "id": "urn:uvci:Nzc3MDY1NjMtM2NiYS00NWE2LTg5OTgtYTUxNzI3ZjIzN2Mw",
+  "id": "urn:uvci:NjFjZjJkZDYtMDYwNC00ZTUxLWEyM2YtODhmMjViZDQ3YmI3",
   "name": "Pneumonia - Streptococcus pneumoniae [pneumococcus]",
   "description": "Pneumonia - Streptococcus pneumoniae [pneumococcus]",
   "credentialSubject": {
     "type": "VaccinationEvent",
-    "batchNumber": "956",
+    "batchNumber": "951",
     "administeringCentre": "U.S. Public Health Authority",
     "healthProfessional": "U.S. Public Health Authority",
     "countryOfVaccination": "United States of America",

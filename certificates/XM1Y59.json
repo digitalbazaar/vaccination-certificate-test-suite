@@ -7,12 +7,12 @@
     "VerifiableCredential",
     "VaccinationCertificate"
   ],
-  "id": "urn:uvci:NDI3NjdmZDItZGU0YS00ZDJmLTliNDgtZWQ2YThjM2YwNGEw",
+  "id": "urn:uvci:ZjJlMjZlY2YtNTMyMi00Zjk5LTllN2QtYTIxNmUzZWI0YmQx",
   "name": "Polio - Vaccine sabin oral",
   "description": "Polio - Vaccine sabin oral",
   "credentialSubject": {
     "type": "VaccinationEvent",
-    "batchNumber": "387",
+    "batchNumber": "972",
     "administeringCentre": "U.S. Public Health Authority",
     "healthProfessional": "U.S. Public Health Authority",
     "countryOfVaccination": "United States of America",
