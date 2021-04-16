@@ -1,6 +1,10 @@
 {
-  "shortName": "Vaccination Credentials Interop Test Suite",
-  "github": "",
+  "specStatus": "ED",
+  "shortName": "vaccine-credentials-test-suite",
+  "subtitle": "Interoperability Report for Vaccine Credentials Data Model",
+  "github": "https://github.com/digitalbazaar/vaccination-certificate-test-suite",
+  "edDraftURI": "http://vaxcert-interop-reports.s3-website.us-east-2.amazonaws.com",
+  "doJsonLd": true,
   "includePermalinks": false,
   "editors": [
     { "name": "Manu Sporny", "url": "http://manu.sporny.org/",
@@ -12,10 +16,6 @@
     { "name": "Andrew Jones", "url": "https://github.com/aljones15",
       "company": "Digital Bazaar", "companyURL": "http://digitalbazaar.com/" }
   ],
-  "group": {
-    "name": "Credentials Community Group",
-    "url": "https://www.w3.org/community/credentials/",
-    "list": "public-credentials",
-    "patentUri": "https://www.w3.org/community/about/agreements/cla/"
-  }
+  "previousPublishDate": "2021-04-09T19:27:46.840Z",
+  "previousMaturity": "ED"
 }
