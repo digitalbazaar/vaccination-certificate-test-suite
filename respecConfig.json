@@ -1,0 +1,21 @@
+{
+  "shortName": "Vaccination Credentials Interop Test Suite",
+  "github": "",
+  "includePermalinks": false,
+  "editors": [
+    { "name": "Manu Sporny", "url": "http://manu.sporny.org/",
+      "company": "Digital Bazaar", "companyURL": "http://digitalbazaar.com/" },
+    { "name": "Andrew Jones", "url": "https://github.com/aljones15",
+      "company": "Digital Bazaar", "companyURL": "http://digitalbazaar.com/" }
+  ],
+  "authors": [
+    { "name": "Andrew Jones", "url": "https://github.com/aljones15",
+      "company": "Digital Bazaar", "companyURL": "http://digitalbazaar.com/" }
+  ],
+  "group": {
+    "name": "Credentials Community Group",
+    "url": "https://www.w3.org/community/credentials/",
+    "list": "public-credentials",
+    "patentUri": "https://www.w3.org/community/about/agreements/cla/"
+  }
+}
