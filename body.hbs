@@ -5,3 +5,36 @@
 </section>
 <section id="sotd">
 </section>
+
+<section class="informative" id="introduction">
+  <h2>Introduction</h2>
+  <p>The purpose of this document is to demonstrate that there are multiple Issuers and Verifiers
+capable of processing Vaccine Credentials that conform to the <a href="https://w3c-ccg.github.io/vaccination-vocab/">Vaccine Certificate Vocabulary</a>.</p>
+  <section class="informative" id="testing-methodolgy">
+    <h3> Testing Methodology</h3>
+    <p>The testing framework for the Vaccine Credentials Data Model executes the following process:</p>
+    <ol class="algorithm">
+      <li>Takes Vaccination Credentials produced from WHO complaint ICD Codes</li>
+      <li>Passes these Vaccination Credentials to numerous Issuers</li>
+      <li>Asserts that the issuer has issued a valid Verifiable Credential</li>
+      <li>Passes the Vaccine Credential to numerous Verifiers</li>
+      <li>Collates the results in an interoperability matrix</li>
+    </ol>
+  </section>
+</section>
+
+<section class="informative" id="conformance-testing-results">
+  <h2> Conformance Testing Results </h2>
+  <section class="informative" id="Key">
+    <h3>Key</h3>
+    <ul>
+      <li>✓ - Success</li>
+      <li>❌ - Error</li>
+      <li>no support - Implementation explicitly does not support this feature</li>
+      <li>untested - This test is new, implementation has not been run on it yet</li>
+      <li>Implementations listed on the left side of the matrices are issuers.</li>
+      <li>Implementations listed on the top of the matrices are verifiers.</li>
+    </ul>
+  </section>
+  The results of the tests are show below:
+</section>
