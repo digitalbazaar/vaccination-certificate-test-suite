@@ -36,11 +36,15 @@ describe('Vaccine Credentials', function() {
       // column names for the matrix go here
       const columnNames = [];
       const reportData = {};
+      const images = [];
       // this will tell the report
       // to make an interop matrix with this suite
       this.matrix = true;
       this.report = true;
       this.columns = columnNames;
+      // this will be displayed under the test title
+      this.reportData = reportData;
+      this.images = images;
 
       // this is the credential for the verifier tests
       let credential = null;
@@ -75,6 +79,9 @@ describe('Vaccine Credentials', function() {
             credential = response.data;
             credential.credentialSubject.should.eql(
               certificate.credentialSubject);
+            // show a single credential
+            reportData.credential = credential;
+            reportData.issuer = issuer.issuer;
           });
           // this sends a credential issued by the implementation
           // to each verifier
