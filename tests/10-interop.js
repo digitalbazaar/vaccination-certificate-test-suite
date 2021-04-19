@@ -4,11 +4,13 @@
 'use strict';
 
 const vpqr = require('@digitalbazaar/vpqr');
+
 import * as chai from 'chai';
 import Implementation from './implementation.js';
 import {testCredential} from './assertions.js';
 import certificates from '../certificates.cjs';
 import allVendors from '../implementations.cjs';
+import {documentLoader} from './loader.js';
 
 const should = chai.should();
 
@@ -80,18 +82,18 @@ describe('Vaccine Credentials', function() {
             credential = response.data;
             credential.credentialSubject.should.eql(
               certificate.credentialSubject);
-            reportData.credentials.push({
+            reportData.credentials = [{
               credential,
               issuer: issuer.issuer
-            });
+            }];
             const vp = {
               '@context': 'https://www.w3.org/2018/credentials/v1',
               type: 'VerifiablePresentation',
               verifiableCredential: credential
             };
             try {
-              const image = await vpqr.toQrCode({vp});
-              images.push(image);
+              const {imageDataUrl} = await vpqr.toQrCode({vp, documentLoader});
+              images[0] = imageDataUrl;
             } catch(e) {
               console.error(e);
             }
