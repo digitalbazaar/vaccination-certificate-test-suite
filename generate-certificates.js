@@ -3,6 +3,8 @@
  */
 'use strict';
 
+require = require('esm')(module);
+
 import {join} from 'path';
 import {writeJSON, getDir, getCSV} from './io.js';
 import {paths} from './paths.js';

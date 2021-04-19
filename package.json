@@ -3,9 +3,8 @@
   "version": "0.0.1",
   "description": "Demonstrates the extensibilty of VCs as immunization certificates.",
   "main": "index.js",
-  "type": "module",
   "scripts": {
-    "test": "mocha tests/ --reporter ./node_modules/mocha-w3c-interop-reporter/index.js --reporter-options body=\"$PWD/body.hbs\",reportDir=\"$PWD/reports\",respec=\"$PWD/respecConfig.json\",title='Vaccination Credentials Interoperability Report 1.0' --timeout 15000",
+    "test": "mocha tests/ --require esm --reporter ./node_modules/mocha-w3c-interop-reporter/index.js --reporter-options body=\"$PWD/body.hbs\",reportDir=\"$PWD/reports\",respec=\"$PWD/respecConfig.json\",title='Vaccination Credentials Interoperability Report 1.0' --timeout 15000",
     "test-node": "mocha tests/ --reporter mochawesome --require mochawesome/register --timeout 15000",
     "generate-certificates": "node generate-certificates.js",
     "fetch-who-int-svc": "if [ ! -e .who-data/svc ]; then git clone --depth 1 https://github.com/who-int/svc.git .who-data/svc; fi",
@@ -34,9 +33,11 @@
   "homepage": "https://github.com/digitalbazaar/vaccination-certificate-test-suite#readme",
   "dependencies": {
     "@digitalbazaar/http-client": "^1.0.0",
+    "@digitalbazaar/vpqr": "github:digitalbazaar/vpqr",
     "axios": "^0.21.1",
     "chai": "^4.3.4",
     "csv-parse": "^4.15.3",
+    "esm": "^3.2.25",
     "mocha": "^8.3.2",
     "mocha-w3c-interop-reporter": "github:digitalbazaar/mocha-w3c-interop-reporter#initial",
     "mochawesome": "^6.2.2",
