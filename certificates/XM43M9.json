@@ -7,12 +7,12 @@
     "VerifiableCredential",
     "VaccinationCertificate"
   ],
-  "id": "urn:uvci:N2JkOGNiNWItNWM4Ni00YWVkLTk0MzQtYjUyZjg4ZWI5MmIw",
+  "id": "urn:uvci:MjAxNWU5YjktYTY4MC00YWZiLWFlOTUtYjdmY2FhZWI2ZTM3",
   "name": "Pertussis",
   "description": "Pertussis",
   "credentialSubject": {
     "type": "VaccinationEvent",
-    "batchNumber": "497",
+    "batchNumber": "866",
     "administeringCentre": "U.S. Public Health Authority",
     "healthProfessional": "U.S. Public Health Authority",
     "countryOfVaccination": "United States of America",

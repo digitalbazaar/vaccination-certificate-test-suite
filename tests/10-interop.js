@@ -30,26 +30,12 @@ const notTest = [
 
 const implementations = allVendors.filter(v => !notTest.includes(v.name));
 
-const results = certificates.map(certificate => ({
-  certificate,
-  issuers: implementations.map(issuer => ({
-    issuer,
-    result: false,
-    verifiers: implementations.map(verifier => ({
-      verifier,
-      result: false
-    }))
-  }))
-}));
-
 describe('Vaccine Credentials', function() {
   for(const certificate of certificates) {
-    // finds the report for this certificate
-    const certificateReport = results.find(
-      r => r.certificate.id === certificate.id);
     describe(certificate.name, function() {
       // column names for the matrix go here
       const columnNames = [];
+      const reportData = {};
       // this will tell the report
       // to make an interop matrix with this suite
       this.matrix = true;
@@ -59,9 +45,6 @@ describe('Vaccine Credentials', function() {
       // this is the credential for the verifier tests
       let credential = null;
       for(const issuer of implementations) {
-        // find the report for this issuer
-        const issuerReport = certificateReport.issuers.find(
-          report => report.issuer.name === issuer.name);
         describe(issuer.name, function() {
           before(async function() {
             try {
@@ -92,13 +75,10 @@ describe('Vaccine Credentials', function() {
             credential = response.data;
             credential.credentialSubject.should.eql(
               certificate.credentialSubject);
-            issuerReport.result = true;
           });
           // this sends a credential issued by the implementation
           // to each verifier
           for(const verifier of implementations) {
-            const verifierReport = issuerReport.verifiers.find(
-              report => report.verifier.name === verifier.name);
             const testTitle = `should be verified by ${verifier.name}`;
             it(testTitle, async function() {
               // this tells the test report which cell
@@ -113,7 +93,6 @@ describe('Vaccine Credentials', function() {
               should.exist(response.data);
               // verifier reponses vary but are all objects
               response.data.should.be.an('object');
-              verifierReport.result = true;
             });
           }
         });
