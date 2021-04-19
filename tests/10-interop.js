@@ -48,14 +48,13 @@ describe('Vaccine Credentials', function() {
     const certificateReport = results.find(
       r => r.certificate.id === certificate.id);
     describe(certificate.name, function() {
+      // column names for the matrix go here
       const columnNames = [];
-      before(function() {
-        // this will tell the report
-        // to make an interop matrix with this suite
-        this.test.parent.matrix = true;
-        this.test.parent.report = true;
-        this.test.parent.columns = columnNames;
-      });
+      // this will tell the report
+      // to make an interop matrix with this suite
+      this.matrix = true;
+      this.report = true;
+      this.columns = columnNames;
 
       // this is the credential for the verifier tests
       let credential = null;
@@ -66,8 +65,6 @@ describe('Vaccine Credentials', function() {
         describe(issuer.name, function() {
           before(async function() {
             try {
-              // set the display name for this row
-              this.test.parent.rowName = issuer.name;
               // ensure this implementation is a column in the matrix
               columnNames.push(issuer.name);
               const implementation = new Implementation(issuer);
