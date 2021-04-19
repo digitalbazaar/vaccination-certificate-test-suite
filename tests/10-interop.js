@@ -35,7 +35,7 @@ describe('Vaccine Credentials', function() {
     describe(certificate.name, function() {
       // column names for the matrix go here
       const columnNames = [];
-      const reportData = {};
+      const reportData = {credentials: []};
       const images = [];
       // this will tell the report
       // to make an interop matrix with this suite
@@ -79,9 +79,10 @@ describe('Vaccine Credentials', function() {
             credential = response.data;
             credential.credentialSubject.should.eql(
               certificate.credentialSubject);
-            // show a single credential
-            reportData.credential = credential;
-            reportData.issuer = issuer.issuer;
+            reportData.credentials.push({
+              credential,
+              issuer: issuer.issuer
+            });
           });
           // this sends a credential issued by the implementation
           // to each verifier
