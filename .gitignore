@@ -1,6 +1,7 @@
 *.sw[nop]
 *.py[co]
 *~
+*.log
 .DS_Store
 .project
 .settings
