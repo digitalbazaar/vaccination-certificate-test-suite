@@ -3,6 +3,7 @@
  */
 'use strict';
 
+const vpqr = require('@digitalbazaar/vpqr');
 import * as chai from 'chai';
 import Implementation from './implementation.js';
 import {testCredential} from './assertions.js';
@@ -83,6 +84,17 @@ describe('Vaccine Credentials', function() {
               credential,
               issuer: issuer.issuer
             });
+            const vp = {
+              '@context': 'https://www.w3.org/2018/credentials/v1',
+              type: 'VerifiablePresentation',
+              verifiableCredential: credential
+            };
+            try {
+              const image = await vpqr.toQrCode({vp});
+              images.push(image);
+            } catch(e) {
+              console.error(e);
+            }
           });
           // this sends a credential issued by the implementation
           // to each verifier
