@@ -7,12 +7,12 @@
     "VerifiableCredential",
     "VaccinationCertificate"
   ],
-  "id": "urn:uvci:YjdhYWNlMWYtYTg2MS00OWNmLTg1NjktMWY1OGY4ZWRjMGMx",
+  "id": "urn:uvci:YWFkMWQyMjItOTAwNC00ZTQxLWI1NGMtMjQxNDczNGEyZmRj",
   "name": "Tetanus - tetanus toxoid",
   "description": "Tetanus - tetanus toxoid",
   "credentialSubject": {
     "type": "VaccinationEvent",
-    "batchNumber": "47",
+    "batchNumber": "973",
     "administeringCentre": "U.S. Public Health Authority",
     "healthProfessional": "U.S. Public Health Authority",
     "countryOfVaccination": "United States of America",

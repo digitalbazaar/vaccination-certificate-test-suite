@@ -7,12 +7,12 @@
     "VerifiableCredential",
     "VaccinationCertificate"
   ],
-  "id": "urn:uvci:ZmE3Njc5ODAtYWNjNS00MDUzLWEwM2EtY2RkNmYxZWE5NzA3",
+  "id": "urn:uvci:MTM0NDk5NTItM2Y5Yi00MzQyLTllMjMtOWRiMmY4OWEwODQ2",
   "name": "Cholera",
   "description": "Cholera",
   "credentialSubject": {
     "type": "VaccinationEvent",
-    "batchNumber": "886",
+    "batchNumber": "632",
     "administeringCentre": "U.S. Public Health Authority",
     "healthProfessional": "U.S. Public Health Authority",
     "countryOfVaccination": "United States of America",

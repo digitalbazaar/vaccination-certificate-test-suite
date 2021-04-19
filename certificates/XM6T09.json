@@ -7,12 +7,12 @@
     "VerifiableCredential",
     "VaccinationCertificate"
   ],
-  "id": "urn:uvci:NmNmMTE4YzUtYTFlZi00ODQzLTllNDktNDU1YTk4MDhkNTk2",
+  "id": "urn:uvci:NDAwMWE4MzEtY2IyOS00NTY3LTkzNTMtYTc1ZGM1MTFmYjgw",
   "name": "Rabies",
   "description": "Rabies",
   "credentialSubject": {
     "type": "VaccinationEvent",
-    "batchNumber": "655",
+    "batchNumber": "502",
     "administeringCentre": "U.S. Public Health Authority",
     "healthProfessional": "U.S. Public Health Authority",
     "countryOfVaccination": "United States of America",
