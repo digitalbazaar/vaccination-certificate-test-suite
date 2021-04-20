@@ -126,7 +126,7 @@ describe('Vaccine Credentials', function() {
       }
     });
   }
-  after(async function() {
+  after(function() {
     // add summary of certificates and implementations used
     summaries.add(
       'This suite issued & verified vaccine credentials for' +
