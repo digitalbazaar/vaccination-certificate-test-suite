@@ -34,6 +34,8 @@ const notTest = [
 const implementations = allVendors.filter(v => !notTest.includes(v.name));
 
 describe('Vaccine Credentials', function() {
+  const summaries = new Set();
+  this.summary = summaries;
   for(const certificate of certificates) {
     describe(certificate.name, function() {
       // column names for the matrix go here
@@ -126,11 +128,10 @@ describe('Vaccine Credentials', function() {
   }
   after(async function() {
     // add summary of certificates and implementations used
-    this.sotd = [
+    summaries.add(
       'This suite issued & verified vaccine credentials for' +
-         ` ${certificates.length} vaccines.`,
-      `These credentials were issued & verified by` +
-        ` ${implementations.length} implementations.`
-    ];
+         ` ${certificates.length} vaccines.`);
+    summaries.add(`These credentials were issued & verified by` +
+        ` ${implementations.length} implementations.`);
   });
 });
