@@ -4,6 +4,14 @@
   </p>
 </section>
 <section id="sotd">
+  <ul>
+  {{#each summary}}
+    <li>{{this}}</li>
+  {{/each}}
+  {{#each stats}}
+    <li>{{this}}</li>
+  {{/each}}
+  </ul>
 </section>
 
 <section class="informative" id="introduction">
