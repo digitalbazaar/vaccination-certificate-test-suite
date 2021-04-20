@@ -45,6 +45,8 @@ describe('Vaccine Credentials', function() {
       this.matrix = true;
       this.report = true;
       this.columns = columnNames;
+      this.rowLabel = 'Issuer';
+      this.columnLabel = 'Verfier';
       // this will be displayed under the test title
       this.reportData = reportData;
       this.images = images;
@@ -122,4 +124,13 @@ describe('Vaccine Credentials', function() {
       }
     });
   }
+  after(async function() {
+    // add summary of certificates and implementations used
+    this.sotd = [
+      'This suite issued & verified vaccine credentials for' +
+         ` ${certificates.length} vaccines.`,
+      `These credentials were issued & verified by` +
+        ` ${implementations.length} implementations.`
+    ];
+  });
 });
