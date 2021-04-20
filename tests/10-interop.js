@@ -86,21 +86,29 @@ describe('Vaccine Credentials', function() {
             credential = response.data;
             credential.credentialSubject.should.eql(
               certificate.credentialSubject);
+            const vp = {
+              '@context': 'https://www.w3.org/2018/credentials/v1',
+              type: 'VerifiablePresentation',
+              verifiableCredential: credential
+            };
+            const {payload, imageDataUrl} = await vpqr.toQrCode(
+              {vp, documentLoader});
+            should.exist(payload, 'Expected there to be a qr payload');
+            should.exist(imageDataUrl, 'Expected QR Code data url');
+            const {vp: actualVP} = await vpqr.fromQrCode({
+              text: payload,
+              documentLoader,
+              //diagnose: console.log
+            });
+            should.exist(actualVP);
+            actualVP.should.be.an(
+              'object', 'Expected actualVP to be an object');
+            actualVP.should.eql(vp);
+            // use the DB Data in the test suite
             if(issuer.name === 'Digital Bazaar') {
               reportData.credential = credential;
               reportData.issuer = issuer.issuer;
-              const vp = {
-                '@context': 'https://www.w3.org/2018/credentials/v1',
-                type: 'VerifiablePresentation',
-                verifiableCredential: credential
-              };
-              try {
-                const {imageDataUrl} = await vpqr.toQrCode(
-                  {vp, documentLoader});
-                images[0] = imageDataUrl;
-              } catch(e) {
-                console.error(e);
-              }
+              images[0] = imageDataUrl;
             }
           });
           // this sends a credential issued by the implementation
