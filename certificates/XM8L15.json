@@ -7,12 +7,12 @@
     "VerifiableCredential",
     "VaccinationCertificate"
   ],
-  "id": "urn:uvci:YWU1MDVmZjItMTFiYy00NDIzLWI4NjQtYjk0MTBhNTIyYTQz",
+  "id": "urn:uvci:OWQ5MGRhNDItYmY4NS00Yjk1LTkzMGQtZTk4Y2EzZWJiNjFl",
   "name": "Measles - Measles, live attenuated",
   "description": "Measles - Measles, live attenuated",
   "credentialSubject": {
     "type": "VaccinationEvent",
-    "batchNumber": "999",
+    "batchNumber": "341",
     "administeringCentre": "U.S. Public Health Authority",
     "healthProfessional": "U.S. Public Health Authority",
     "countryOfVaccination": "United States of America",

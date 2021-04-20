@@ -7,12 +7,12 @@
     "VerifiableCredential",
     "VaccinationCertificate"
   ],
-  "id": "urn:uvci:N2MwOTYzMzktMjdjNi00OWY0LThjZmQtODk4ZWU4NGZhYjBk",
+  "id": "urn:uvci:OGFhNDMzYjQtMzMxYS00MzY0LTgwZTQtYjg4OWJmOGZmNDI3",
   "name": "Tetanus ",
   "description": "Tetanus ",
   "credentialSubject": {
     "type": "VaccinationEvent",
-    "batchNumber": "662",
+    "batchNumber": "747",
     "administeringCentre": "U.S. Public Health Authority",
     "healthProfessional": "U.S. Public Health Authority",
     "countryOfVaccination": "United States of America",

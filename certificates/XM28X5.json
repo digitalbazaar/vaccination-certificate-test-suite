@@ -7,12 +7,12 @@
     "VerifiableCredential",
     "VaccinationCertificate"
   ],
-  "id": "urn:uvci:ZDQ2OTA3YzgtMjkwZi00NWYwLWFlYTItNGNlZmE2NDUzNGZm",
+  "id": "urn:uvci:ZTFjYTJhNTQtNzViNS00MWU0LWI4YjMtODNhM2ZiZWNkZWMx",
   "name": "Measles",
   "description": "Measles",
   "credentialSubject": {
     "type": "VaccinationEvent",
-    "batchNumber": "58",
+    "batchNumber": "102",
     "administeringCentre": "U.S. Public Health Authority",
     "healthProfessional": "U.S. Public Health Authority",
     "countryOfVaccination": "United States of America",

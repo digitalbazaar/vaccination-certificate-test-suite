@@ -1,6 +1,11 @@
-import axios from 'axios';
-import {uvci} from '../helpers.js';
-import https from 'https';
+/*!
+ * Copyright (c) 2021 Digital Bazaar, Inc. All rights reserved.
+ */
+'use strict';
+
+const axios = require('axios');
+const {uvci} = require('../helpers.cjs');
+const https = require('https');
 
 const httpsAgent = new https.Agent({rejectUnauthorized: false});
 
@@ -9,7 +14,7 @@ const _headers = {
   'Content-Type': 'application/json',
 };
 
-export default class Implementation {
+class Implementation {
   constructor(settings) {
     this.settings = settings;
   }
@@ -73,3 +78,5 @@ export default class Implementation {
     }
   }
 }
+
+module.exports = Implementation;

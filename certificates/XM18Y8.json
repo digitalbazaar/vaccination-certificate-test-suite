@@ -7,12 +7,12 @@
     "VerifiableCredential",
     "VaccinationCertificate"
   ],
-  "id": "urn:uvci:ZjM5NGI1OWEtODAwMy00NzYwLWFlYmMtOTAzNGM0NWQyNTll",
+  "id": "urn:uvci:OWRmNDMzMWEtYTRmNC00YzU3LWJlYTItOTBkMmQyZWQyNzA0",
   "name": "Meningitis - Meningococcal conjugate (Strain C) vaccine",
   "description": "Meningitis - Meningococcal conjugate (Strain C) vaccine",
   "credentialSubject": {
     "type": "VaccinationEvent",
-    "batchNumber": "160",
+    "batchNumber": "599",
     "administeringCentre": "U.S. Public Health Authority",
     "healthProfessional": "U.S. Public Health Authority",
     "countryOfVaccination": "United States of America",
