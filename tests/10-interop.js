@@ -6,7 +6,7 @@
 const vpqr = require('@digitalbazaar/vpqr');
 
 import * as chai from 'chai';
-import Implementation from './implementation.js';
+import Implementation from './implementation.cjs';
 import {testCredential} from './assertions.js';
 import certificates from '../certificates.cjs';
 import allVendors from '../implementations.cjs';
@@ -38,7 +38,7 @@ describe('Vaccine Credentials', function() {
     describe(certificate.name, function() {
       // column names for the matrix go here
       const columnNames = [];
-      const reportData = {credentials: []};
+      const reportData = {};
       const images = [];
       // this will tell the report
       // to make an interop matrix with this suite
@@ -82,20 +82,21 @@ describe('Vaccine Credentials', function() {
             credential = response.data;
             credential.credentialSubject.should.eql(
               certificate.credentialSubject);
-            reportData.credentials = [{
-              credential,
-              issuer: issuer.issuer
-            }];
-            const vp = {
-              '@context': 'https://www.w3.org/2018/credentials/v1',
-              type: 'VerifiablePresentation',
-              verifiableCredential: credential
-            };
-            try {
-              const {imageDataUrl} = await vpqr.toQrCode({vp, documentLoader});
-              images[0] = imageDataUrl;
-            } catch(e) {
-              console.error(e);
+            if(issuer.name === 'Digital Bazaar') {
+              reportData.credential = credential;
+              reportData.issuer = issuer.issuer;
+              const vp = {
+                '@context': 'https://www.w3.org/2018/credentials/v1',
+                type: 'VerifiablePresentation',
+                verifiableCredential: credential
+              };
+              try {
+                const {imageDataUrl} = await vpqr.toQrCode(
+                  {vp, documentLoader});
+                images[0] = imageDataUrl;
+              } catch(e) {
+                console.error(e);
+              }
             }
           });
           // this sends a credential issued by the implementation

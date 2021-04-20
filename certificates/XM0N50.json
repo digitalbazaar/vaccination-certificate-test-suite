@@ -7,12 +7,12 @@
     "VerifiableCredential",
     "VaccinationCertificate"
   ],
-  "id": "urn:uvci:YzUwZmM0OTEtNTVkNy00MmI1LWFjMGEtNjI1NTdiZjU5OTlh",
+  "id": "urn:uvci:NzZiODQxODctYzcyZS00ODUyLTk1NGQtMGVjNzEwYmI2OTA0",
   "name": "Polio",
   "description": "Polio",
   "credentialSubject": {
     "type": "VaccinationEvent",
-    "batchNumber": "53",
+    "batchNumber": "667",
     "administeringCentre": "U.S. Public Health Authority",
     "healthProfessional": "U.S. Public Health Authority",
     "countryOfVaccination": "United States of America",

@@ -7,12 +7,12 @@
     "VerifiableCredential",
     "VaccinationCertificate"
   ],
-  "id": "urn:uvci:OTEwNDMzYzUtMmYyNi00ZGJmLWI2N2MtNzY5NDEyMGYwYThm",
+  "id": "urn:uvci:N2M1NmNkOGYtMjUyOC00NmY2LWExY2MtYWFlMzFiNzc1MDc1",
   "name": "Typhoid",
   "description": "Typhoid",
   "credentialSubject": {
     "type": "VaccinationEvent",
-    "batchNumber": "945",
+    "batchNumber": "195",
     "administeringCentre": "U.S. Public Health Authority",
     "healthProfessional": "U.S. Public Health Authority",
     "countryOfVaccination": "United States of America",

@@ -3,11 +3,14 @@
  */
 'use strict';
 
-import {v4 as uuid} from 'uuid';
+const {v4: uuid} = require('uuid');
 
 // FIXME: this needs to generate a real uvci.
-export function uvci() {
+function uvci() {
   const input = Buffer.from(uuid());
   return input.toString('base64');
 }
 
+module.exports = {
+  uvci
+};

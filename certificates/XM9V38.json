@@ -7,12 +7,12 @@
     "VerifiableCredential",
     "VaccinationCertificate"
   ],
-  "id": "urn:uvci:YjZiYWY0NTQtYzJjNi00NGY4LWE0MTgtNTJmMWZhY2NhMGFj",
+  "id": "urn:uvci:OGE5YTZmNzktYjY0ZC00NWVmLTg0NzgtNWUyMGI5NTk0MmI4",
   "name": "Hepatitis B ",
   "description": "Hepatitis B ",
   "credentialSubject": {
     "type": "VaccinationEvent",
-    "batchNumber": "203",
+    "batchNumber": "433",
     "administeringCentre": "U.S. Public Health Authority",
     "healthProfessional": "U.S. Public Health Authority",
     "countryOfVaccination": "United States of America",
