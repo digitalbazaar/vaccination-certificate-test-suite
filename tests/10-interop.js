@@ -106,8 +106,7 @@ describe('Vaccine Credentials', function() {
             actualVP.should.eql(vp);
             // use the DB Data in the test suite
             if(issuer.name === 'Digital Bazaar') {
-              reportData.credential = credential;
-              reportData.issuer = issuer.issuer;
+              Object.assign(reportData, credential);
               images[0] = imageDataUrl;
             }
           });
