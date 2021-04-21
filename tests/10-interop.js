@@ -6,7 +6,7 @@
 const vpqr = require('@digitalbazaar/vpqr');
 
 import * as chai from 'chai';
-//import filesize from 'file-size';
+import filesize from 'file-size';
 import Implementation from './implementation.cjs';
 import {testCredential} from './assertions.js';
 import certificates from '../certificates.cjs';
@@ -94,9 +94,9 @@ describe('Vaccine Credentials', function() {
             };
             const {
               payload,
-              //version,
+              version,
               imageDataUrl,
-              //rawCborldBytes
+              rawCborldBytes
             } = await vpqr.toQrCode(
               {vp, documentLoader});
             should.exist(payload, 'Expected there to be a qr payload');
@@ -112,17 +112,15 @@ describe('Vaccine Credentials', function() {
             // use the DB Data in the test suite
             if(issuer.name === 'Digital Bazaar') {
               reportData[0] = {data: JSON.stringify(credential, null, 2)};
-              /*
               // FIXME add once full compression is in place
               const compression = 'Compressed to ' +
               filesize(rawCborldBytes.length).human();
               const meta = [
-                // compression
+                compression,
                 `Version ${version} QR Code`,
                 'Base32 alphanumeric encoding'
               ];
-              */
-              images[0] = {src: imageDataUrl, meta: []};
+              images[0] = {src: imageDataUrl, meta};
             }
           });
           // this sends a credential issued by the implementation
