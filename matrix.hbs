@@ -7,17 +7,19 @@
     td.optional {
       background-color: #b9b7b7;
     }
-   .label {
-      text-align: left;
-      padding-left: 1rem;
+   .text-right {
+      text-align: right;
     }
+   .text-left {
+      text-align: left;
+    }
+   .text-center {
+     text-align: center;
+   }
    .row {
      display: flex;
      justify-content: space-between;
      align-items: center;
-   }
-   .simple td {
-     padding: 0.25rem;
    }
    .small-font {
      font-size: 0.75rem;
@@ -26,26 +28,34 @@
      width: 200px;
      height: 200px;
    }
-   pre, code{
+   pre, code.hljs{
      overflow: hidden;
+     overflow-x: hidden;
+     overflow-y: hidden;
+     white-space: pre-wrap;
    }
   </style>
   <div class="row">
     <div>
     {{#if matrix.images}}
       {{#each matrix.images}}
-        <img class="qr-code" src={{{this}}} />
+        <img class="qr-code" src={{{this.src}}} />
+        {{#each this.meta}}
+          <div class="text-center small-font">
+            {{this}}
+          </div>
+        {{/each}}
       {{/each}}
     {{/if}}
     </div>
     <table class="simple">
       <thead>
         <th width="20%">
-          <div class="label small-font">
+          <div class="text-right small-font">
           {{matrix.columnLabel}} &#8658;
           </div>
-          <div class="label small-font">
-          &#8659; {{matrix.rowLabel}}
+          <div class="text-left small-font">
+          <span>&#8659;</span><span>{{matrix.rowLabel}}</span>
           </div>
         </th>
           {{#each matrix.columns}}
@@ -70,7 +80,7 @@
     <div>
     {{#if matrix.reportData}}
       {{#each matrix.reportData}}
-      <pre class="small-font">{{this}}</pre>
+        <pre class="small-font">{{{this}}}</pre>
       {{/each}}
     {{/if}}
     </div>
