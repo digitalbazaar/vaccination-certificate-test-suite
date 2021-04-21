@@ -4,7 +4,7 @@
   "description": "Demonstrates the extensibilty of VCs as immunization certificates.",
   "main": "index.js",
   "scripts": {
-    "test": "mocha tests/ --require esm --reporter ./node_modules/mocha-w3c-interop-reporter/index.js --reporter-options body=\"$PWD/body.hbs\",reportDir=\"$PWD/reports\",respec=\"$PWD/respecConfig.json\",title='Vaccination Credentials Interoperability Report 1.0',reportLog='./report.log' --timeout 15000",
+    "test": "mocha tests/ --require esm --reporter ./node_modules/mocha-w3c-interop-reporter/index.js --reporter-options body=\"$PWD/body.hbs\",matrix=\"$PWD/matrix.hbs\",reportDir=\"$PWD/reports\",respec=\"$PWD/respecConfig.json\",title='Vaccination Credentials Interoperability Report 1.0',suiteLog='./suite.log' --timeout 15000",
     "test-node": "mocha tests/ --require esm --reporter mochawesome ./node_modules/mocha-w3c-interop-reporter/index.js --reporter-options body=\"$PWD/body.hbs\",reportDir=\"$PWD/reports\",respec=\"$PWD/respecConfig.json\",title='Vaccination Credentials Interoperability Report 1.0' --timeout 15000",
     "generate-certificates": "node generate-certificates.cjs",
     "fetch-who-int-svc": "if [ ! -e .who-data/svc ]; then git clone --depth 1 https://github.com/who-int/svc.git .who-data/svc; fi",

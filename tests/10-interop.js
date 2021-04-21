@@ -40,7 +40,7 @@ describe('Vaccine Credentials', function() {
     describe(certificate.name, function() {
       // column names for the matrix go here
       const columnNames = [];
-      const reportData = {};
+      const reportData = [];
       const images = [];
       // this will tell the report
       // to make an interop matrix with this suite
@@ -106,7 +106,7 @@ describe('Vaccine Credentials', function() {
             actualVP.should.eql(vp);
             // use the DB Data in the test suite
             if(issuer.name === 'Digital Bazaar') {
-              Object.assign(reportData, credential);
+              reportData[0] = JSON.stringify(credential, null, 2);
               images[0] = imageDataUrl;
             }
           });
