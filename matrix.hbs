@@ -16,6 +16,9 @@
    .text-center {
      text-align: center;
    }
+   .qr-code {
+     margin-left: 25px;
+   }
    .row {
      display: flex;
      justify-content: space-between;
@@ -24,30 +27,11 @@
    .small-font {
      font-size: 0.75rem;
    }
-   .qr-code {
-     width: 200px;
-     height: 200px;
-   }
    pre, code.hljs{
-     overflow: hidden;
-     overflow-x: hidden;
-     overflow-y: hidden;
-     white-space: pre-wrap;
+     overflow: auto;
    }
   </style>
   <div class="row">
-    <div>
-    {{#if matrix.images}}
-      {{#each matrix.images}}
-        <img class="qr-code" src={{{this.src}}} />
-        {{#each this.meta}}
-          <div class="text-center small-font">
-            {{this}}
-          </div>
-        {{/each}}
-      {{/each}}
-    {{/if}}
-    </div>
     <table class="simple">
       <thead>
         <th width="20%">
@@ -75,12 +59,31 @@
     {{/each}}
     </tbody>
     </table>
+    <div>
+    {{#if matrix.images}}
+      {{#each matrix.images}}
+        <img class="qr-code" src={{{this.src}}} />
+        {{#each this.meta}}
+          <div class="text-center small-font">
+            {{this}}
+          </div>
+        {{/each}}
+      {{/each}}
+    {{/if}}
+    </div>
   </div>
   <div>
     <div>
     {{#if matrix.reportData}}
       {{#each matrix.reportData}}
-        <pre class="small-font">{{{this}}}</pre>
+        {{#if this.details}}
+          <details>
+            <summary>{{this.label}}</summary>
+            <pre class="small-font">{{{this.data}}}</pre>
+          </details>
+        {{else}}
+          <pre class="small-font">{{{this.data}}}</pre>
+        {{/if}}
       {{/each}}
     {{/if}}
     </div>

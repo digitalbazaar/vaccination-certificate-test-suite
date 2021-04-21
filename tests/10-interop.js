@@ -6,7 +6,7 @@
 const vpqr = require('@digitalbazaar/vpqr');
 
 import * as chai from 'chai';
-import filesize from 'file-size';
+//import filesize from 'file-size';
 import Implementation from './implementation.cjs';
 import {testCredential} from './assertions.js';
 import certificates from '../certificates.cjs';
@@ -92,28 +92,18 @@ describe('Vaccine Credentials', function() {
               type: 'VerifiablePresentation',
               verifiableCredential: credential
             };
-            const logger = entry => {
-              if(issuer.name === 'Digital Bazaar') {
-                const length = reportData.length;
-                if(typeof entry === 'string') {
-                  reportData[length] = entry;
-                  return;
-                }
-                reportData[length] = JSON.stringify(entry, null, 2);
-              }
-            };
             const {
               payload,
+              //version,
               imageDataUrl,
-              rawCborldBytes
+              //rawCborldBytes
             } = await vpqr.toQrCode(
               {vp, documentLoader});
             should.exist(payload, 'Expected there to be a qr payload');
             should.exist(imageDataUrl, 'Expected QR Code data url');
             const {vp: actualVP} = await vpqr.fromQrCode({
               text: payload,
-              documentLoader,
-              diagnose: logger
+              documentLoader
             });
             should.exist(actualVP);
             actualVP.should.be.an(
@@ -121,10 +111,18 @@ describe('Vaccine Credentials', function() {
             actualVP.should.eql(vp);
             // use the DB Data in the test suite
             if(issuer.name === 'Digital Bazaar') {
-              reportData[0] = JSON.stringify(credential, null, 2);
+              reportData[0] = {data: JSON.stringify(credential, null, 2)};
+              /*
+              // FIXME add once full compression is in place
               const compression = 'Compressed to ' +
-                filesize(rawCborldBytes.length).human();
-              images[0] = {src: imageDataUrl, meta: [compression]};
+              filesize(rawCborldBytes.length).human();
+              const meta = [
+                // compression
+                `Version ${version} QR Code`,
+                'Base32 alphanumeric encoding'
+              ];
+              */
+              images[0] = {src: imageDataUrl, meta: []};
             }
           });
           // this sends a credential issued by the implementation
