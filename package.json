@@ -43,6 +43,7 @@
     "did-context": "^3.0.1",
     "ed25519-signature-2020-context": "^1.0.1",
     "esm": "^3.2.25",
+    "file-size": "^1.0.0",
     "jsonld-document-loader": "^1.1.0",
     "mocha": "^8.3.2",
     "mocha-w3c-interop-reporter": "github:digitalbazaar/mocha-w3c-interop-reporter#initial",

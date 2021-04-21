@@ -6,6 +6,7 @@
 const vpqr = require('@digitalbazaar/vpqr');
 
 import * as chai from 'chai';
+import filesize from 'file-size';
 import Implementation from './implementation.cjs';
 import {testCredential} from './assertions.js';
 import certificates from '../certificates.cjs';
@@ -91,14 +92,28 @@ describe('Vaccine Credentials', function() {
               type: 'VerifiablePresentation',
               verifiableCredential: credential
             };
-            const {payload, imageDataUrl} = await vpqr.toQrCode(
+            const logger = entry => {
+              if(issuer.name === 'Digital Bazaar') {
+                const length = reportData.length;
+                if(typeof entry === 'string') {
+                  reportData[length] = entry;
+                  return;
+                }
+                reportData[length] = JSON.stringify(entry, null, 2);
+              }
+            };
+            const {
+              payload,
+              imageDataUrl,
+              rawCborldBytes
+            } = await vpqr.toQrCode(
               {vp, documentLoader});
             should.exist(payload, 'Expected there to be a qr payload');
             should.exist(imageDataUrl, 'Expected QR Code data url');
             const {vp: actualVP} = await vpqr.fromQrCode({
               text: payload,
               documentLoader,
-              //diagnose: console.log
+              diagnose: logger
             });
             should.exist(actualVP);
             actualVP.should.be.an(
@@ -107,7 +122,9 @@ describe('Vaccine Credentials', function() {
             // use the DB Data in the test suite
             if(issuer.name === 'Digital Bazaar') {
               reportData[0] = JSON.stringify(credential, null, 2);
-              images[0] = imageDataUrl;
+              const compression = 'Compressed to ' +
+                filesize(rawCborldBytes.length).human();
+              images[0] = {src: imageDataUrl, meta: [compression]};
             }
           });
           // this sends a credential issued by the implementation
