@@ -9,7 +9,7 @@
     "generate-certificates": "node generate-certificates.cjs",
     "fetch-who-int-svc": "if [ ! -e .who-data/svc ]; then git clone --depth 1 https://github.com/who-int/svc.git .who-data/svc; fi",
     "report": "",
-    "upload": "aws s3 cp ./reports/ s3://vaxcert-interop-reports --recursive",
+    "upload": "aws s3 cp ./reports/ s3://vaxcert-interop-reports --recursive --acl public-read",
     "lint": "eslint *.js"
   },
   "repository": {
