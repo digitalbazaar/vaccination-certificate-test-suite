@@ -18,18 +18,16 @@ jobs:
     - run: npm install
     - name: Run test with Node.js ${{ matrix.node-version }}
     - run: npm run test-node
-  lint:
+  update-s3-bucket:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
-    strategy:
-      matrix:
-        node-version: [14.x]
     steps:
-    - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
+    - uses: jakejarvis/s3-sync-action@master
+    - name: S3 Sync
       with:
-        node-version: ${{ matrix.node-version }}
-    - run: npm install
-    - name: Run eslint
-      run: npm run lint
+        args: --acl public-read
+      env:
+        AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        AWS_REGION: ${{ secrets.AWS_REGION }} # optional: defaults to us-east-1
+        SOURCE_DIR: 'reports'      # optional: defaults to entire repository
