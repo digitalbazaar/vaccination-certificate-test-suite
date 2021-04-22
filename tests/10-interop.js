@@ -97,8 +97,11 @@ describe('Vaccine Credentials', function() {
               version,
               imageDataUrl,
               rawCborldBytes
-            } = await vpqr.toQrCode(
-              {vp, documentLoader});
+            } = await vpqr.toQrCode({
+              vp,
+              documentLoader,
+              //diagnose: console.log
+            });
             should.exist(payload, 'Expected there to be a qr payload');
             should.exist(imageDataUrl, 'Expected QR Code data url');
             const {vp: actualVP} = await vpqr.fromQrCode({
@@ -112,6 +115,7 @@ describe('Vaccine Credentials', function() {
             // use the DB Data in the test suite
             if(issuer.name === 'Digital Bazaar') {
               reportData[0] = {data: JSON.stringify(credential, null, 2)};
+              /*
               // FIXME add once full compression is in place
               const compression = 'Compressed to ' +
               filesize(rawCborldBytes.length).human();
@@ -120,7 +124,8 @@ describe('Vaccine Credentials', function() {
                 `Version ${version} QR Code`,
                 'Base32 alphanumeric encoding'
               ];
-              images[0] = {src: imageDataUrl, meta};
+              */
+              images[0] = {src: imageDataUrl, meta: []};
             }
           });
           // this sends a credential issued by the implementation
