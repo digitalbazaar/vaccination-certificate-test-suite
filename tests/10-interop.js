@@ -61,19 +61,22 @@ describe('Vaccine Credentials', function() {
         const compressedVP = await createCompressedVC(
           {certificate, documentLoader});
         const [vc] = compressedVP.verifiableCredential;
-        reportData[0] = {data: JSON.stringify(vc, null, 2)};
+        reportData[0] = {
+          label: certificate.name,
+          data: JSON.stringify(vc, null, 2)
+        };
         const compressedQr = await vpqr.toQrCode({
           vp: compressedVP,
           documentLoader,
           //diagnose: console.log
         });
         // FIXME add once full compression is in place
-        const compression = 'Compressed to ' +
+        const compression = 'CBOR-LD: ' +
         filesize(compressedQr.rawCborldBytes.length, {fixed: 0}).human();
         const meta = [
           compression,
-          `Version ${compressedQr.version} QR Code`,
-          'Base32 alphanumeric encoding'
+          `QR Code: v${compressedQr.version}`,
+          'Encoding: base32 alphanumeric'
         ];
         images.push({src: compressedQr.imageDataUrl, meta});
       });

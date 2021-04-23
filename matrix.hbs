@@ -44,7 +44,7 @@
         </th>
           {{#each matrix.columns}}
             <th class="no-wrap small-font">{{this}}</th>
-          {{/each}} 
+          {{/each}}
       </thead>
       <tbody>
     {{#each matrix.rows}}
@@ -79,10 +79,14 @@
         {{#if this.details}}
           <details>
             <summary>{{this.label}}</summary>
-            <pre class="small-font">{{{this.data}}}</pre>
+<pre class="example small-font" title="{{this.label}} Vaccination Certificate">
+{{{this.data}}}
+</pre>
           </details>
         {{else}}
-          <pre class="small-font">{{{this.data}}}</pre>
+<pre class="example small-font" title="{{this.label}} Vaccination Certificate">
+{{{this.data}}}
+</pre>
         {{/if}}
       {{/each}}
     {{/if}}
