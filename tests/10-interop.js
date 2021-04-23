@@ -60,6 +60,8 @@ describe('Vaccine Credentials', function() {
       after(async function() {
         const compressedVP = await createCompressedVC(
           {certificate, documentLoader});
+        const [vc] = compressedVP.verifiableCredential;
+        reportData[0] = {data: JSON.stringify(vc, null, 2)};
         const compressedQr = await vpqr.toQrCode({
           vp: compressedVP,
           documentLoader,
@@ -88,9 +90,6 @@ describe('Vaccine Credentials', function() {
               // this credential is not tested
               // we just send it to each verifier
               credential = response.data;
-              if(issuer.name === 'Digital Bazaar') {
-                reportData[0] = {data: JSON.stringify(credential, null, 2)};
-              }
             } catch(e) {
               console.error(`${issuer.name} failed to issue a ` +
                 'credential for verification tests', e);
