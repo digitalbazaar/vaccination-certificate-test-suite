@@ -12,9 +12,9 @@ import {testCredential} from './assertions.js';
 import certificates from '../certificates.cjs';
 import allVendors from '../implementations.cjs';
 import {documentLoader} from './loader.js';
+import {createCompressedVC} from './helpers.js';
 
 const should = chai.should();
-
 // do not test these implementations' issuers or verifiers
 const notTest = [
   'Dock',
@@ -94,9 +94,9 @@ describe('Vaccine Credentials', function() {
             };
             const {
               payload,
-              version,
+              //version,
               imageDataUrl,
-              rawCborldBytes
+              //rawCborldBytes
             } = await vpqr.toQrCode({
               vp,
               documentLoader,
@@ -115,17 +115,22 @@ describe('Vaccine Credentials', function() {
             // use the DB Data in the test suite
             if(issuer.name === 'Digital Bazaar') {
               reportData[0] = {data: JSON.stringify(credential, null, 2)};
-              /*
+              const compressedVP = await createCompressedVC(
+                {certificate, documentLoader});
+              const compressedQr = await vpqr.toQrCode({
+                vp: compressedVP,
+                documentLoader,
+                //diagnose: console.log
+              });
               // FIXME add once full compression is in place
               const compression = 'Compressed to ' +
-              filesize(rawCborldBytes.length).human();
+              filesize(compressedQr.rawCborldBytes.length).human();
               const meta = [
                 compression,
-                `Version ${version} QR Code`,
+                `Version ${compressedQr.version} QR Code`,
                 'Base32 alphanumeric encoding'
               ];
-              */
-              images[0] = {src: imageDataUrl, meta: []};
+              images[0] = {src: compressedQr.imageDataUrl, meta};
             }
           });
           // this sends a credential issued by the implementation
