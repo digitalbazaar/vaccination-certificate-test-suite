@@ -64,7 +64,7 @@ function createVC(vaccine) {
       batchNumber: String(Math.floor(Math.random() * 1000)),
       administeringCentre: 'USPHA',
       healthProfessional: 'USPHA',
-      countryOfVaccination: 'USA',
+      countryOfVaccination: 'US',
       recipient: {
         type: 'VaccineRecipient',
         givenName: 'JOHN',
