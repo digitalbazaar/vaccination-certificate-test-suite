@@ -23,6 +23,8 @@ jobs:
     runs-on: ubuntu-latest
     needs: [test-node]
     steps:
+      - name: 'Dir check'
+        run: ls -la
       - name: 'S3 Bucket sync'
         uses: jakejarvis/s3-sync-action@master
         with:
