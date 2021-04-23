@@ -69,7 +69,7 @@ describe('Vaccine Credentials', function() {
         });
         // FIXME add once full compression is in place
         const compression = 'Compressed to ' +
-        filesize(compressedQr.rawCborldBytes.length).human();
+        filesize(compressedQr.rawCborldBytes.length, {fixed: 0}).human();
         const meta = [
           compression,
           `Version ${compressedQr.version} QR Code`,
