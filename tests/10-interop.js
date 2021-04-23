@@ -56,6 +56,25 @@ describe('Vaccine Credentials', function() {
 
       // this is the credential for the verifier tests
       let credential = null;
+      // after the vaccine suite runs add a compressed image
+      after(async function() {
+        const compressedVP = await createCompressedVC(
+          {certificate, documentLoader});
+        const compressedQr = await vpqr.toQrCode({
+          vp: compressedVP,
+          documentLoader,
+          //diagnose: console.log
+        });
+        // FIXME add once full compression is in place
+        const compression = 'Compressed to ' +
+        filesize(compressedQr.rawCborldBytes.length).human();
+        const meta = [
+          compression,
+          `Version ${compressedQr.version} QR Code`,
+          'Base32 alphanumeric encoding'
+        ];
+        images.push({src: compressedQr.imageDataUrl, meta});
+      });
       for(const issuer of implementations) {
         describe(issuer.name, function() {
           before(async function() {
@@ -69,6 +88,9 @@ describe('Vaccine Credentials', function() {
               // this credential is not tested
               // we just send it to each verifier
               credential = response.data;
+              if(issuer.name === 'Digital Bazaar') {
+                reportData[0] = {data: JSON.stringify(credential, null, 2)};
+              }
             } catch(e) {
               console.error(`${issuer.name} failed to issue a ` +
                 'credential for verification tests', e);
@@ -113,25 +135,6 @@ describe('Vaccine Credentials', function() {
               'object', 'Expected actualVP to be an object');
             actualVP.should.eql(vp);
             // use the DB Data in the test suite
-            if(issuer.name === 'Digital Bazaar') {
-              reportData[0] = {data: JSON.stringify(credential, null, 2)};
-              const compressedVP = await createCompressedVC(
-                {certificate, documentLoader});
-              const compressedQr = await vpqr.toQrCode({
-                vp: compressedVP,
-                documentLoader,
-                //diagnose: console.log
-              });
-              // FIXME add once full compression is in place
-              const compression = 'Compressed to ' +
-              filesize(compressedQr.rawCborldBytes.length).human();
-              const meta = [
-                compression,
-                `Version ${compressedQr.version} QR Code`,
-                'Base32 alphanumeric encoding'
-              ];
-              images[0] = {src: compressedQr.imageDataUrl, meta};
-            }
           });
           // this sends a credential issued by the implementation
           // to each verifier
