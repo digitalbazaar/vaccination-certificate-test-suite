@@ -20,7 +20,7 @@ jobs:
         run: npm run fetch-who-int-svc
       - name: 'Clean certificates'
         run: rm -f ./certificates/*.json
-      - name: 'Generate Certificates'
+      - name: 'Generate Latest Certificates'
         run: npm run generate-certificates
       - name: Run test with Node.js ${{ matrix.node-version }}
         run: npm run test-node
