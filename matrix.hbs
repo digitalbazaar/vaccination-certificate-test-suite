@@ -59,10 +59,10 @@
     {{/each}}
     </tbody>
     </table>
-    <div>
+    <div class="qr-code">
     {{#if matrix.images}}
       {{#each matrix.images}}
-        <img class="qr-code" src={{{this.src}}} />
+        <img src={{{this.src}}} />
         {{#each this.meta}}
           <div class="text-center small-font">
             {{this}}
