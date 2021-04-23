@@ -62,9 +62,9 @@ function createVC(vaccine) {
     credentialSubject: {
       type: 'VaccinationEvent',
       batchNumber: String(Math.floor(Math.random() * 1000)),
-      administeringCentre: 'U.S. Public Health Authority',
-      healthProfessional: 'U.S. Public Health Authority',
-      countryOfVaccination: 'United States of America',
+      administeringCentre: 'USPHA',
+      healthProfessional: 'USPHA',
+      countryOfVaccination: 'USA',
       recipient: {
         type: 'VaccineRecipient',
         givenName: 'JOHN',
