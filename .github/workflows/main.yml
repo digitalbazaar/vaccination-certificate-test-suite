@@ -3,8 +3,9 @@ name: Node.js CI
 on:
   schedule:
     # update the integration suite once per day
-    # this will happen at 13:00 UTC every day
-    - cron: '0 13 * * *'
+    # this will happen at 24:00 UTC every day
+    # EDT is 4 hours behind UTC
+    - cron: '0 24 * * *'
 
 jobs:
   test-node:
