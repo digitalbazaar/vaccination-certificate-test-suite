@@ -16,6 +16,12 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - run: npm install
+      - name: 'Get latest WHO Data'
+        run: npm run fetch-who-int-svc
+      - name: 'Clean certificates'
+        run: rm -f ./certificates/*.json
+      - name: 'Generate Certificates'
+        run: npm run generate-certificates
       - name: Run test with Node.js ${{ matrix.node-version }}
         run: npm run test-node
         continue-on-error: true
