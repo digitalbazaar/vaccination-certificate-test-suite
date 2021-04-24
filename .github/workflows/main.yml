@@ -1,11 +1,10 @@
 name: Node.js CI
 
 on:
+  workflow_dispatch:
   schedule:
-    # update the integration suite once per day
-    # this will happen at 24:00 UTC every day
-    # EDT is 4 hours behind UTC
-    - cron: '0 24 * * *'
+    # update the integration suite once per week at Sunday 5am UTC
+    - cron: '5 0 * * 0'
 
 jobs:
   test-node:
