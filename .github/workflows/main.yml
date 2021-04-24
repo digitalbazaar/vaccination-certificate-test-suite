@@ -1,4 +1,4 @@
-name: Node.js CI
+name: Generate Interop Report
 
 on:
   workflow_dispatch:
