@@ -17,6 +17,7 @@ import {createCompressedVC} from './helpers.js';
 const should = chai.should();
 // do not test these implementations' issuers or verifiers
 const notTest = [
+  'Mavennet',
   'Dock',
   'Factom',
   'SICPA',
