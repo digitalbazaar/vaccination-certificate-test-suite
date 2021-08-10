@@ -15,17 +15,24 @@ import {documentLoader} from './loader.js';
 import {createCompressedVC} from './helpers.js';
 
 const should = chai.should();
-// do not test these implementations' issuers or verifiers
+
+// do not test these
 const notTest = [
+  'Danube Tech',
+  //'Digital Bazaar',
   'Mavennet',
+  //'MATTR',
+  'mesur.io',
   'Dock',
   'Factom',
   'SICPA',
+  'Spherity',
   // Error: "Credential could not be verified" for mulitple VCs
   // from multiple vendors.
   'Trybe',
   // verifier returns 404 for all credentials
   'Trustbloc',
+  'Transmute',
   // Unable to filter proofs: method-not-supported for multiple VCs
   // from different vendors (was able to verify themselves, Mattr, & others)
   'Spruce'
